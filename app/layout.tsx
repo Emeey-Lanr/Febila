@@ -22,7 +22,7 @@ export default function RootLayout({
         <ReduxProvider>
           <AppProvider>
             {children}
-            <Sidebar />
+         
             <DonateModal />
             <ErrorSuccessModal />
           </AppProvider>

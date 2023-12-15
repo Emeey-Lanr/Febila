@@ -4,7 +4,7 @@ import { changeSidebar } from "@/Redux/constituents/sidebar"
 import "@/styles/sidebar.css"
 import { useSelector, useDispatch } from "react-redux"
 
-import { useRouter } from "next/navigation"
+import  useRouter from "next/router"
 const Sidebar = () => {
   const router = useRouter()
     const dispatch = useDispatch<AppDispatch>()

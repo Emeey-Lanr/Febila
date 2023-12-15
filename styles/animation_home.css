@@ -1,0 +1,129 @@
+.hero .pS-0{
+    animation: text0 6s 1 running normal;
+}
+.hero .pS-1{
+    animation: text1 6s 1 running normal;
+}
+.hero .pS-2{
+    animation: text2 6s 1 running normal;
+}
+@keyframes text0 {
+    0%{
+       
+       
+    }
+    100%{
+         transform: translateY(10px);
+   
+    }
+   
+    
+}
+@keyframes text1 {
+    0%{
+        opacity: 100%;
+        transition: 1s all ease-out;
+       
+    }
+    100%{
+         transform: translateY(10px);
+        opacity: 0%;
+    }
+    
+}
+@keyframes text2 {
+    0%{
+        opacity: 100%;
+        transition: 1s all ease-out;
+       
+    }
+    100%{
+         transform: translateY(10px);
+    
+    }
+    
+}
+
+.hero .hero-img-0{
+    animation: hero-img-0 4s 1 running normal;
+}
+.hero .hero-img-1{
+    animation: hero-img-1 4s 1 running normal;
+}
+.hero .hero-img-2{
+    animation: hero-img-2 4s 1 running normal;
+}
+@keyframes hero-img-0 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+  transform: translateX(-40deg);
+    }
+}
+@keyframes hero-img-1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+   transform: translateX(-40deg);
+    }
+}
+@keyframes hero-img-2 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+    transform: translateX(-40deg);
+    }
+}
+.loading_animation{
+    display: flex;
+}
+.loading_animation span{
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+.loading_animation :nth-child(1){
+
+    animation: loading1 infinite 2s running normal;
+}
+.loading_animation :nth-child(2){
+    animation: loading2 infinite 2s running normal;
+}
+.loading_animation :nth-child(3){
+    animation: loading1 infinite 2s running normal;
+}
+.loading_animation :nth-child(4){
+    animation: loading2 infinite 2s running normal;
+}
+
+@keyframes loading1 {
+    0%{
+     border: none;
+    }
+    100%{
+        border: none;
+        background: white;
+       
+        transition: 1s all ease-in;
+        margin: 0 4px;
+    }
+}
+
+@keyframes loading2 {
+    0%{
+ 
+        border: none;
+        background: white;
+        transition: 1.5s all ease-in;
+        margin: 0 4px;
+    }
+    100%{
+     
+    }
+}
+

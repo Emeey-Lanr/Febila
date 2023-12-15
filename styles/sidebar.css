@@ -1,0 +1,11 @@
+.closeSidebar{
+
+    top: -900px;
+    background: white;
+    transition: 2s all ease-out;
+}
+.openSidebar{
+    top: 0;
+     transition: 2s all ease-in;
+     background: white;
+}

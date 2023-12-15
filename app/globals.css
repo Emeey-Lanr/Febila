@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+ 
+}
+body{
+    background: linear-gradient(to left, #f7f6f6, #f3f1f3, #f0f0f1);
+  
+}
+.modal_background {
+background: #0000009f;
+}
+
+

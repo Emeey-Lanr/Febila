@@ -3,8 +3,7 @@ import { AppDispatch, RootState } from "@/Redux/Store"
 import { changeSidebar } from "@/Redux/constituents/sidebar"
 import "@/styles/sidebar.css"
 import { useSelector, useDispatch } from "react-redux"
-
-import  useRouter from "next/router"
+import {useRouter} from "next/navigation"
 const Sidebar = () => {
   const router = useRouter()
     const dispatch = useDispatch<AppDispatch>()
@@ -15,7 +14,7 @@ const Sidebar = () => {
    }
   return (
     <div
-      className={`hidden sm:w-full sm:h-full sm:block  ${sidebarData.close}`}
+      className={`hidden sm:w-full sm:h-full sm:block sm:fixed ${sidebarData.close}`}
     >
    
       <div className="p-3 flex justify-end">

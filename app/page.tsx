@@ -29,10 +29,9 @@ import client4 from "@/public/images/client4.jpg";
 import { exitOpenModal } from "@/Redux/constituents/errorSuccessModal";
 
 import Footer from "@/components/Footer";
-
-import Link from "next/link";
+import Navbar from "@/components/Navbar"
 import { changeSidebar } from "@/Redux/constituents/sidebar";
-import useRouter from "next/router"
+import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
 
 const Home = () => {
@@ -59,7 +58,7 @@ const Home = () => {
   };
   return (
     <>
-   <Footer/>
+  <Navbar/>
       <div>
         {/* Hero Section */}
         <div className="hero flex justify-center items-center py-20 border-t border-t-blue-100 md:block">

@@ -5,7 +5,7 @@ import arrow from "@/public/icons/arrow.svg"
 import {useDispatch} from"react-redux"
 import { AppDispatch } from "@/Redux/Store"
 import { changeSidebar } from "@/Redux/constituents/sidebar"
-import useRouter from "next/router"
+import { useRouter } from "next/navigation"
 const Navbar = () => {
   const router = useRouter()
   const dispatch = useDispatch<AppDispatch>()

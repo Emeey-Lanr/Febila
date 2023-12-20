@@ -6,6 +6,7 @@ import {useDispatch} from"react-redux"
 import { AppDispatch } from "@/Redux/Store"
 import { changeSidebar } from "@/Redux/constituents/sidebar"
 import { useRouter } from "next/navigation"
+import logo from "@/public/icons/logo_green_png.png"
 const Navbar = () => {
   const router = useRouter()
   const dispatch = useDispatch<AppDispatch>()
@@ -13,10 +14,11 @@ const Navbar = () => {
     <>
   
        <div>
-        <div className="w-full flex justify-between items-center ">
+        <div className="w-full flex justify-between items-center sticky top-0">
           <div className="w-2/4  h-20  flex items-center">
-            <div className="w-4/5 mx-auto">
-              <Link href="/" className="text-black">
+            <div className="w-4/5 flex items-center mx-auto">
+              <Image src={logo} className="w-12" alt=""/>
+              <Link href="/" className="text-black text-xl pl-4">
                 Febila
               </Link>
             </div>
@@ -46,7 +48,7 @@ const Navbar = () => {
                 <div>
                   <button
                     onClick={() => router.push("/contact")}
-                    className="flex justify-between px-2 py-2 items-center w-40 h-10 rounded-full bg-blue-600"
+                    className="flex justify-between px-2 py-2 items-center w-40 h-10 rounded-full bg-green-500"
                   >
                     <span className="text-xs text-white w-4/5 text-center">
                       Contact Us

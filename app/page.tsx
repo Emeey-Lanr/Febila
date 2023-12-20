@@ -3,34 +3,21 @@ import Image from "next/image";
 import "@/styles/home.css";
 import "@/styles/animation_home.css";
 import book from "@/public/images/magazine.jpg";
-import hands from "@/public/icons/hand.svg";
-import invest from "@/public/icons/invest.svg";
-import house from "@/public/icons/house.svg";
-import land from "@/public/icons/land.svg";
-import arrow from "@/public/icons/arrow.svg";
-import wheel from "@/public/images/wheel.png";
-import car from "@/public/images/cara.png";
+import children from "@/public/images/children.jpg"
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "@/Redux/Store";
 import { useEffect, useState } from "react";
 
-import { changeInfo } from "@/Redux/constituents/hero";
-import estate1 from "@/public/images/estate3.jpg";
-import estate2 from "@/public/images/estate4.jpg";
 import estate3 from "@/public/images/estate5.jpg";
-import estate4 from "@/public/images/estate6.jpg";
-
-import mission from "@/public/images/mission.jpg";
-import client1 from "@/public/images/client1.png";
-import client2 from "@/public/images/client2.jpg";
-import client3 from "@/public/images/client3.jpg";
-import client4 from "@/public/images/client4.jpg";
-
-import { exitOpenModal } from "@/Redux/constituents/errorSuccessModal";
+import bitcoin from "@/public/images/bitcoin.jpg"
+import farm1 from "@/public/images/land.jpg"
+import farm2 from "@/public/images/farm2.jpg"
+import arrow from "@/public/icons/arrow.svg";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar"
-import { changeSidebar } from "@/Redux/constituents/sidebar";
+import {FaHospital, FaBook, FaWater, FaAnchor, FaArrowAltCircleRight, FaArrowRight} from "react-icons/fa"
+
 import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
 
@@ -38,7 +25,7 @@ const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
   const [index, setIndex] = useState<number>(0);
-  const [btnStatus, setBtnStatus] = useState<boolean>(false);
+
   const timeoutFunc = (time: number) => {
     setTimeout(() => {
       setIndex(index + 1);
@@ -58,71 +45,88 @@ const Home = () => {
   };
   return (
     <>
-  <Navbar/>
+      <Navbar />
       <div>
         {/* Hero Section */}
-        <div className="hero flex justify-center items-center py-20 border-t border-t-blue-100 md:block">
-          <div className="w-2/4 flex justify-center items-center md:w-full">
-            <div className="w-4/5 md:w-full">
-              <h1 className="text-4xl py-2   text-gray-900 font-medium hero_text leading-20 md:text-center">
+        <div className="hero items-center  border-t border-t-blue-100 md:block">
+          <div className="hero_content py-20 mx-auto flex justify-center items-center md:w-full">
+            <div className=" md:w-full">
+              <h1 className="text-4xl py-2 text-center  text-white font-medium hero_text leading-20 md:text-center">
                 UNLOCKING INIFINITE <br /> POSIBILITIES FOR{" "}
-                <span className="text-blue-600 font-bold text-5xl">YOU</span>
+                <span className="text-green-500 font-bold text-5xl">YOU</span>
               </h1>
               <p
-                className={`py-2  leading-12 text-gray-600 md:text-center md:w-4/5 md:mx-auto`}
+                className={`py-2 text-sm w-3/4 mx-auto text-center leading-12 text-gray-100 md:text-center md:w-4/5 md:mx-auto`}
               >
-                <span className="text-blue-600 font-bold text-lg ">FEBILA</span>{" "}
-                a gateway to endless opportunities and transformative
-                experiences, where every click brings you closer to the
-                extraordinary, where your aspirations become reality
+                <span className="text-white font-bold text-lg ">FEBILA</span> a
+                gateway to endless opportunities and transformative experiences,
+                where every click brings you closer to the extraordinary, where
+                your aspirations become reality
               </p>
-              <div className="py-2 md:flex md:justify-center md:items-center">
-                <button
-                  onClick={() => router.push("/contact")}
-                  className="flex justify-between px-2 py-2 items-center w-40 h-10 rounded-full bg-blue-600"
-                >
+              {/* <div className="w-6/12 mx-auto flex justify-between border border-gray-300 rounded-md p-3">
+                <div className="bg-white rounded-md p-2">
+                  <div className="flex items-center">
+                    <span className="block w-3 h-3 bg-green-400 rounded-full"></span>
+                    <span className="text-green-500 text-sm pl-2">
+                      Donation
+                    </span>
+                  </div>
+
+                  <span className="text-4xl text-center text-green-500 font-bold">
+                    14k
+                  </span>
+                </div>
+                <div className="bg-white rounded-md p-2">
+                  <div className="flex items-center">
+                    <span className="block w-3 h-3 bg-green-400 rounded-full"></span>
+                    <span className="text-green-500 text-sm pl-2">
+                      Donation
+                    </span>
+                  </div>
+
+                  <span className="text-4xl text-center text-green-500 font-bold">
+                    14k
+                  </span>
+                </div>
+                <div className="bg-white rounded-md p-2">
+                  <div className="flex items-center">
+                    <span className="block w-3 h-3 bg-green-400 rounded-full"></span>
+                    <span className="text-green-500 text-sm pl-2">
+                      Donation
+                    </span>
+                  </div>
+
+                  <span className="text-4xl text-center text-green-500 font-bold">
+                    14k
+                  </span>
+                </div>
+                <div className="bg-white rounded-md p-2">
+                  <div className="flex items-center">
+                    <span className="block w-3 h-3 bg-green-400 rounded-full"></span>
+                    <span className="text-green-500 text-sm pl-2">
+                      Donation
+                    </span>
+                  </div>
+
+                  <span className="text-4xl text-center text-green-500 font-bold">
+                    14k
+                  </span>
+                </div>
+              </div> */}
+              <div className="py-2 mt-6 flex justify-center md:flex md:justify-center md:items-center">
+                <button className="flex justify-between px-2 py-2 items-center w-40 h-10 rounded-full bg-green-500">
                   <span className="text-xs text-white w-4/5 text-center">
                     Contact Us
                   </span>
                   <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                    <Image
-                      className="rotate-6 rounded-md w-4"
-                      src={arrow}
-                      alt=""
-                    />
+                    <FaArrowRight className="rotate-4" />
                   </span>
                 </button>
+                {/* <button className="w-36 h-10 ml-6 flex justify-around items-center bg-green-500 text-sm text-white rounded-full">
+                  Contact Us
+                  <span className="block w-8 h-8  bg-white rounded-full"></span>
+                </button> */}
               </div>
-            </div>
-          </div>
-          <div className="w-2/4 flex justify-around items-center md:w-full md:mt-32">
-            <div
-              className="w-full border-1 border-blue-100 rounded-md flex justify-center items-center"
-              style={{ height: "500px" }}
-            >
-              <div className="w-4/5 mx-auto">
-                <Image
-                  style={{ height: "400px" }}
-                  className={`w-full  hero-img-${index} object-cover rotate-6  rounded-md`}
-                  src={heroData.data[index].img}
-                  alt=""
-                  height={500}
-                />
-              </div>
-            </div>
-
-            <div>
-              {heroData.data.map((data, id) => (
-                <button
-                  key={id}
-                  className={`w-2 h-40 block border border-blue-600 ${
-                    id === 0 && "rounded-t-full"
-                  } ${id === 2 && "rounded-b-full"} ${
-                    id === index && "bg-blue-600"
-                  }`}
-                  onClick={() => heroIndicationBtn(id)}
-                ></button>
-              ))}
             </div>
           </div>
         </div>
@@ -132,367 +136,338 @@ const Home = () => {
         <div className="flex justify-center items-center h-24">
           <h1 className="text-xl">
             Welcome to{" "}
-            <span className="text-4xl font-bold text-blue-600">FEBILA</span>
+            <span className="text-4xl font-bold text-green-500">FEBILA</span>
           </h1>
         </div>
+        <marquee direction="right">
+          <div className="flex justify-around items-center pb-20">
+            <div className="flex items-center">
+              <span></span>
+              <span className="text-2xl italic font-bold text-gray-300 ">
+                Cryptocurrency
+              </span>
+            </div>
+            <div className="flex items-center">
+              <span></span>
+              <span className="text-2xl italic font-bold text-gray-300 ">
+                Agriculture
+              </span>
+            </div>
+            <div className="flex items-center">
+              <span></span>
+              <span className="text-2xl italic font-bold text-gray-300 ">
+                Publishing
+              </span>
+            </div>
+            <div className="flex items-center">
+              <span></span>
+              <span className="text-2xl italic font-bold text-gray-300 ">
+                Real Estate
+              </span>
+            </div>
 
-        {/* Foundation */}
-        <div className="py-10">
-          <div className="foundation">
-            <div className="flex justify-center items-center foundation_content">
-              <div className="w-2/5 lg:w-full">
-                <h1 className="text-4xl text-center font-bold text-white">
-                  <span className="text-blue-600">FEBILA</span> FOUNDATION
-                </h1>
-                <h1 className="text-white text-2xl text-center py-4">
-                  Helping Lives, Our Utmost Importance
-                </h1>
-                <p className="text-center text-white text-sm leading-10 lg:w-4/5 lg:mx-auto">
-                  Our mission is to help people in need reach their full
-                  potential. We do this by providing them with the resources and
-                  support they need to succeed.
-                </p>
-              </div>
+            <div className="flex items-center">
+              <span></span>
+              <span className="text-2xl italic font-bold text-gray-300 ">
+                Logistics & Transportation
+              </span>
             </div>
           </div>
+        </marquee>
 
-          {/* Foundation */}
+        <div className="flex justify-around items-center lg:block  lg:w-full ">
+          <div className="w-1/2 lg:mx-auto lg:w-4/5 xsm:w-full ">
+            <Image
+              className="w-4/5  rounded-t-full mx-auto xsm:w-full"
+              src={children}
+              alt=""
+            />
+          </div>
 
-          <div className="flex justify-center items-center lg:block">
-            <div className="py-10 bg-blue-600 w-2/4 flex justify-around items-center lg:w-full msm:block">
-              <div className="w-2/6  msm:w-4/5 msm:mx-auto msm:py-5">
-                <div className="w-full flex ">
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <h1 className="w-full mx-1 font-medium  rounded-md text-white text-xl py-2 ">
-                    Education
-                  </h1>
-                </div>
-                <div className="w-full my-1">
-                  <p className="text-white text-xs leading-10 text-justify">
-                    Education they say is the key to unlocking pontetials.
-                    Febila acts as the source to getting the key for some who
-                    are aren't packaged enough to afford to get one
-                  </p>
+          <div className="w-1/2 lg:w-4/5 lg:mx-auto lg:mt-10 sm:w-11/12 sm:mx-auto xsm:block xsm:w-1/2 foundation_content">
+            <div className="w-5/6 mx-auto xsm:w-11/12">
+              <h1 className="text-center text-4xl sm:text-left">
+                <span className="text-green-500 font-bold">Febila</span>{" "}
+                Foundation
+              </h1>
+              <p className="text-sm text-center leading-10 text-gray-600 py-8 lg:text-justify">
+                A beacon of hope committed to transforming lives and building a
+                brighter future. Our foundation is dedicated to making a
+                meaningful impact in crucial areas that shape the well-being of
+                communities worldwide
+              </p>
+            </div>
+
+            <div className="flex justify-around w-full sm:block xsm:w-full ">
+              <div className="bg-green-500 py-5 px-5 rounded-md w-2/5 sm:w-4/5 sm:mx-auto xsm:w-full foundation_content_info">
+                <div className="flex items-center">
+                  <span className="h-10 w-10 rounded-full bg-white flex justify-center items-center">
+                    <FaBook className="text-green-500" />
+                  </span>{" "}
+                  <span className="text-2xl text-white pl-3">Education</span>
                 </div>
                 <div>
-                  <div className="py-2">
-                    <button className="flex justify-between px-2 py-2 items-center w-full h-10 rounded-full border-2 border-white">
-                      <span className="text-xs text-white  text-center">
-                        Donate
-                      </span>
-                      <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                        <Image src={arrow} className="w-2" alt="" />
-                      </span>
-                    </button>
-                  </div>
+                  <p className="text-xs leading-10  text-justify text-white">
+                    Education is a powerful tool for empowerment, we are
+                    committed to bridging educational gaps and fostering a love
+                    for learning.
+                  </p>
                 </div>
               </div>
-              <div className="w-2/6  msm:w-4/5 msm:mx-auto msm:py-5">
-                <div className="w-full flex ">
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <h1 className="w-full mx-1 font-medium  rounded-md text-white text-xl py-2 ">
-                    Health
-                  </h1>
-                </div>
-                <div className="w-full my-1">
-                  <p className="text-white text-xs leading-10 text-justify">
-                    Health is wealth but do you know not everybody gets to enjoy
-                    the wealth, health offers? Febila is on a campaign to make
-                    it accesible to all
-                  </p>
+              <div className="bg-white mt-4 py-5 px-5 rounded-md w-2/5 sm:w-4/5 sm:mx-auto xsm:w-full foundation_content_info">
+                <div className="flex items-center">
+                  <span className="h-10 w-10 rounded-full bg-green-500 flex justify-center items-center">
+                    <FaHospital className="text-white" />
+                  </span>{" "}
+                  <span className="text-2xl text-gray-600 pl-3">Health</span>
                 </div>
                 <div>
-                  <div className="py-2">
-                    <button className="flex justify-between px-2 py-2 items-center w-full h-10 rounded-full border-2 border-white">
-                      <span className="text-xs text-white  text-center">
-                        Donate
-                      </span>
-                      <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                        <Image src={arrow} className="w-2" alt="" />
-                      </span>
-                    </button>
-                  </div>
+                  <p className="text-xs leading-10  text-justify text-grey-500">
+                    We believe that good health is the foundation for a
+                    fulfilling life. We tirelessly work towards providing access
+                    to quality healthcare.
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="py-10 w-2/4 flex justify-around items-center lg:w-full msm:block">
-              <div className="w-2/6  msm:w-4/5 msm:mx-auto msm:py-5">
-                <div className="w-full flex ">
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <h1 className="w-full mx-1 font-medium  rounded-md text-geay-700 text-xl py-2 ">
-                    Water
-                  </h1>
-                </div>
-                <div className="w-full my-1">
-                  <p className="text-gray-700 text-xs leading-10 text-justify">
-                    Water is life, but some don't have access to it. One of our
-                    core mission at FEBILA is to make water accesible to those
-                    in need of it
-                  </p>
+            <div className="flex justify-around w-full mt-4 sm:block">
+              <div className="bg-white py-5 px-5 rounded-md w-2/5 sm:w-4/5 sm:mx-auto xsm:w-full foundation_content_info">
+                <div className="flex items-center">
+                  <span className="h-10 w-10 rounded-full bg-green-500 flex justify-center items-center">
+                    <FaWater className="text-white" />
+                  </span>{" "}
+                  <span className="text-2xl text-gray-600 pl-3">Water</span>
                 </div>
                 <div>
-                  <div className="py-2">
-                    <button className="flex justify-between px-2 py-2 items-center w-full h-10 rounded-full bg-blue-600">
-                      <span className="text-xs text-white  text-center">
-                        Donate
-                      </span>
-                    </button>
-                  </div>
+                  <p className="text-xs leading-10  text-justify text-grey-500">
+                    Water is life, and we recognize its essential role in
+                    sustaining communities. Febila Foundation is dedicated to
+                    ensuring access to clean and safe water sources.
+                  </p>
                 </div>
               </div>
-              <div className="w-2/6  msm:w-4/5 msm:mx-auto msm:py-5">
-                <div className="w-full flex ">
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded-s-2xl"></div>
-                  </div>
-                  <h1 className="w-full mx-1 font-medium  rounded-md text-geay-700 text-xl py-2 ">
+              <div className="bg-white mt-4 py-5 px-5 rounded-md w-2/5 sm:w-4/5 sm:mx-auto xsm:w-full foundation_content_info">
+                <div className="flex items-center">
+                  <span className="h-10 w-10 rounded-full bg-green-500 flex justify-center items-center">
+                    <FaAnchor className="text-white" />
+                  </span>{" "}
+                  <span className="text-2xl text-gray-600 pl-3">
                     Poverty Alleviation
-                  </h1>
-                </div>
-                <div className="w-full my-1">
-                  <p className="text-gray-700 text-xs leading-10 text-justify">
-                    we support initiatives that provide economic opportunities,
-                    job training, and resources to individuals and communities
-                    in need
-                  </p>
+                  </span>
                 </div>
                 <div>
-                  <div className="py-2">
-                    <button className="flex justify-between px-2 py-2 items-center w-full h-10 rounded-full bg-blue-600">
-                      <span className="text-xs text-white  text-center">
-                        Donate
-                      </span>
-                      <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                        <Image src={arrow} className="w-2" alt="" />
-                      </span>
-                    </button>
-                  </div>
+                  <p className="text-xs leading-10  text-justify text-grey-500">
+                    Poverty creates barriers to progress, and the Febila
+                    Foundation is committed to breaking those barriers through
+                    targeted interventions, vocational training programs.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-t-blue-100 w-full h-1 py-10" />
-        <div className="w-11/12 mx-auto sm:mx-0">
-          <h1 className="text-4xl text-center font-semibold ml-10">
-            <span className="text-blue-600 ">FEBILA</span> Real Estate
-          </h1>
+        <div className="mt-40 py-10 flex justify-around items-center lg:block lg:w-full">
+          <div>
+            <h1 className="text-4xl py-2  leading-12 lg:text-left sm:w-11/12 sm:mx-auto">
+              <span className="font-bold text-green-500">Febila </span> Real
+              Estate & <br />
+              Associate
+            </h1>
+            <p className="text-sm leading-12 text-gray-600 lg:text-left lg:mx-auto lg:w-11/12">
+              Febila breathe life into edifice, we serve as helping hands{" "}
+              <br className="xsm:hidden" /> for accountable mangement and
+              selling of properties.
+            </p>
+            <div></div>
+            <div className="py-8 lg:w-11/12 lg:mx-auto">
+              <button className="w-32 h-10 text-sm text-white rounded-full bg-green-500">
+                learn more <span></span>
+              </button>
+            </div>
+          </div>
+          <div className="w-1/2 estate_div lg:w-11/12 lg:mx-auto">
+            <div className="estate-background flex justify-center items-center">
+              <button className="w-12 h-12 rounded-full bg-white">
+                <span></span>
+              </button>
+            </div>
+            <div className="estate-foreground">
+              <Image className="img w-full h-full" src={estate3} alt="" />
+            </div>
+          </div>
+        </div>
 
-          <p className="leading-14  text-center text-gray-600 ml-9 mb-10 ">
-            Discover Your Dream Home with FEBILA Real Estate{" "}
-            <span className="text-4xl font-bold text-blue-600">&</span> <br />
-            find the perfect property that matches your vision and investment
-            goals. Whether
+        {/* FEBILA FARMING */}
+        <div className="flex w-full items-center mt-60 lg:block">
+          <div className="w-1/2 lg:w-full">
+            <div className="w-4/5 mx-auto farming_img_div">
+              <Image
+                src={farm1}
+                className="w-full h-40 rounded-md object-cover img"
+                alt=""
+              />
+            </div>
+            <div className="w-4/5 mt-5 mx-auto farming_img_div">
+              <Image
+                src={farm2}
+                className="w-full h-40 rounded-md object-cover img"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="w-1/2 lg:w-11/12  lg:mx-auto lg:mt-10">
+            <h1 className="text-4xl text-center w-4/5  lg:text-left lg:w-full">
+              <span className="text-green-500 font-bold ">Febila</span> Farms
+            </h1>
+            <p className="text-sm w-4/5 py-5 leading-10 text-gray-700 text-center lg:mx-auto lg:w-11/12 lg:text-justify">
+              We believe in the power of agriculture to nourish communities and
+              preserve the environment because agriculture is not just a
+              practice but a commitment to sustainable and responsible farming
+            </p>
+            <div className="w-2/5 mx-auto flex items-center py-5 lg:w-11/12">
+              <div className="w-2 h-2 rounded-md bg-green-500 mx-3"></div>
+              <p className="text-sm w-11/12 text-gray-500  flex items-center">
+                <span>
+                  Uncover the potential of agricultural investment at Febila and
+                  the goodies it brings
+                </span>
+              </p>
+            </div>
+            <div className="w-2/5 flex items-center py-5 lg:w-11/12 lg:mx-auto">
+              <div className="w-2 h-2 rounded-md bg-green-500 mx-3"></div>
+              <p className="text-sm w-11/12 text-gray-500  flex items-center">
+                <span>
+                  We offer opportunities for individuals and businesses to be
+                  part of our mission.
+                </span>
+              </p>
+            </div>
+            <div className="w-2/5 mx-auto flex items-center py-5 lg:w-11/12 lg:mx-auto">
+              <div className="w-2 h-2 rounded-md bg-green-500 mx-3"></div>
+              <p className="text-sm w-11/12 text-gray-500  flex items-center">
+                <span>
+                  Not just as consumers but as partners in sustainable
+                  agriculture
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Fashion */}
+        {/* <div className="mt-40 py-10">
+          <h1 className="text-center text-4xl">
+            {" "}
+            <span className="text-green-500 font-bold">Febila</span> Fashion
+          </h1>
+          <p className="text-sm text-center w-3/5 mx-auto py-2">
+            Empowering individuals to embrace their authenticity through
+            thoughtfully curated collections that blend timeless elegance with
+            contemporary flair
           </p>
         </div>
-        <div className="flex py-20 lg:block lg:py-0 lg:pb-10 lg:w-full">
-          <div className="w-2/4  flex justify-center lg:mx-auto  md:w-4/5 md:mx-auto md:py-4 sm:w-full">
-            <div className=" flex rotate-6 w-4/5 estate_img_div ">
-              <div className="h-full w-full mx-1">
-                <Image
-                  className="block object-cover mb-3 rounded-md"
-                  style={{ height: "70%" }}
-                  src={estate1}
-                  alt=""
-                />
-                <Image
-                  className="block object-cover rounded-md"
-                  style={{ height: "20%" }}
-                  src={estate2}
-                  alt=""
-                />
-              </div>
-              <div className="h-full w-full mx-1">
-                <Image
-                  className="block object-cover mb-3 rounded-md"
-                  style={{ height: "30%" }}
-                  src={estate3}
-                  alt=""
-                />
-                <Image
-                  className="block object-cover rounded-md"
-                  style={{ height: "60%" }}
-                  src={estate4}
-                  alt=""
-                />
-              </div>
-              <div className="h-full w-full mx-1">
-                <Image
-                  className="block object-cover mb-3 rounded-md"
-                  style={{ height: "50%" }}
-                  src={estate2}
-                  alt=""
-                />
-                <Image
-                  className="block object-cover rounded-md"
-                  style={{ height: "40%" }}
-                  src={estate3}
-                  alt=""
-                />
+        <div className="w-full flex  mt-10">
+          <div className="w-1/2 flex justify-center items-center">
+            <div className="w-5/12 mx-auto h-96 rounded-md flex justify-center items-center fashion_img1">
+              <div>
+                <p className="text-sm text-white text-center w-11/12 mx-auto py-2">
+                  <span className="font-bold py-2">
+                    Discover Your Style Identity{" "}
+                  </span>
+                  <br />
+                  Find the perfect ensemble that resonates with your unique
+                  identity
+                </p>
+                <div>
+                  <button className="w w-36 text-white mt-2 h-10 bg-green-500 rounded-r-md">
+                    view
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-2/4 flex justify-center items-center  rotate-8 py-8 mx-auto lg:w-full ">
-            <div className="w-4/5   sm:w-full">
-              <div className="w-4/5 flex justify-between mb-10 lg:mx-auto sm:w-full xsm:block">
-                <div className="bg-white py-3 px-1 mx-3 rotate-2 rounded-md sm:mb-10">
-                  <div className="w-20 mx-auto h-20 py-3  flex justify-center items-center  rounded-full bg-red-100">
-                    <Image src={land} className="w-14 h-14" alt="" />
-                  </div>
-                  <div className="py-2">
-                    <p className="font-bold text-center leading-10 text-gray-800 ">
-                      Land
-                    </p>
-                    <p className="text-sm text-center leading-10 text-gray-500">
-                      Looking for a land to build your dream home. Get one from
-                      Febila at a very affordable cost
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-white py-3 px-1 mx-3 rotate-2 rounded-md">
-                  <div className="w-20 mx-auto h-20 py-3  flex justify-center items-center  rounded-full bg-yellow-100">
-                    <Image src={invest} className="w-14 h-14" alt="" />
-                  </div>
-                  <div className="py-2">
-                    <p className="font-bold text-center leading-10 text-gray-800">
-                      Invest
-                    </p>
-                    <p className="text-sm text-center leading-10 text-gray-500">
-                      Do you know you can also invest in our FEBLIA's Real
-                      Estate and make money? What you looking for, get locked in
-                    </p>
-                  </div>
+            <div className="w-5/12 mx-auto h-96 rounded-md flex justify-center items-center fashion_img2">
+              <div>
+                <p className="text-sm text-white text-center w-11/12 mx-auto py-2">
+                  <span className="font-bold py-2">
+                    {" "}
+                    Crafting Timeless Quality{" "}
+                  </span>
+                  <br />
+                  Dedicated to providing not only stylish garments but also
+                  enduring craftsmanship
+                </p>
+                <div>
+                  <button className="w w-36 text-white mt-2 h-10 bg-green-500 rounded-r-md">
+                    view
+                  </button>
                 </div>
               </div>
-              <div className="w-4/5 flex justify-between mb-10 lg:mx-auto sm:w-full xsm:block">
-                <div className="bg-white py-3 px-1 mx-3 rotate-2 rounded-md sm:mb-10">
-                  <div className="w-20 mx-auto h-20 py-3  flex justify-center items-center  rounded-full bg-green-100">
-                    <Image src={house} className="w-14 h-14" alt="" />
-                  </div>
-                  <div className="py-2">
-                    <p className="font-bold text-center leading-10 text-gray-800 ">
-                      Properties
-                    </p>
-                    <p className="text-sm text-center leading-10 text-gray-500">
-                      Looking for an hostel, or a house, we can help you get one
-                      at ease and at a very affordable price without having to
-                      stress yourself
-                    </p>
-                  </div>
+            </div>
+          </div> 
+
+
+          <div className="w-1/2 flex justify-center items-center">
+            <div className="w-5/12 mx-auto h-96 rounded-md flex justify-center items-center fashion_img3">
+              <div>
+                <p className="text-sm text-white text-center w-11/12 mx-auto py-2">
+                  <span className="font-bold py-2">
+                    {" "}
+                    Sustainability in Style
+                  </span>
+                  <br />
+                  commitment to sustainability is reflected in every aspect of
+                  our brand
+                </p>
+                <div>
+                  <button className="w w-36 text-white mt-2 h-10 bg-green-500 rounded-r-md">
+                    view
+                  </button>
                 </div>
-                <div className="bg-white py-3 px-1 mx-3 rotate-2 rounded-md">
-                  <div className="w-20 mx-auto h-20 py-3  flex justify-center items-center  rounded-full bg-blue-100">
-                    <Image src={hands} className="w-14 h-14" alt="" />
-                  </div>
-                  <div className="py-2">
-                    <p className="font-bold text-center leading-10 text-gray-800">
-                      Land
-                    </p>
-                    <p className="text-sm text-center leading-10 text-gray-500">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Adipisci, molestias?
-                    </p>
-                  </div>
+              </div>
+            </div>
+            <div className="w-5/12 mx-auto h-96 rounded-md flex justify-center items-center fashion_img4">
+              <div>
+                <p className="text-sm text-white text-center w-11/12 mx-auto">
+                  <span className="font-bold p py-2y-1">
+                    {" "}
+                    Future of Fashion
+                  </span>{" "}
+                  <br />
+                  2elcome to a world where style meets expression, The journey
+                  to redefine your style starts here
+                </p>
+                <div>
+                  <button className="w w-36 text-white mt-2 h-10 bg-green-500 rounded-r-md">
+                    view
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="border-r border-t-blue-100 w-full h-1 " />
-
-        <div className="py-20 trans_div">
-          <div className="w-full flex  items-end trans_logistics">
-            <div className="car_div mx-6">
-              <Image src={car} alt="" className="car" />
-              <Image src={wheel} alt="" className="wheel1" />
-              <Image src={wheel} alt="" className="wheel2" />
-              <p className="febila_car_text">
-                FEBILA <br />
-                <span>Logistics</span>
-              </p>
-            </div>
-            <div className="car_div mx-6">
-              <Image src={car} alt="" className="car" />
-              <Image src={wheel} alt="" className="wheel1" />
-              <Image src={wheel} alt="" className="wheel2" />
-              <p className="febila_car_text text-center">
-                FEBILA <br />
-                <span> Transportation</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="w-full mx-auto flex justify-center items-center py-10">
-            <div>
-              <h1 className="text-4xl text-center font-semibold sm:text-2xl ">
-                <span className="text-blue-600 font-semibold">FEBILA</span>, an
-                Efficiency in Motion
+        </div>*/}
+        <div className="flex  items-center mt-40 py-10 md:block">
+          <div className="w-1/2 md:w-11/12 md:mx-auto">
+            <div className="w-4/5 mx-auto md:w-full">
+              <h1 className="text-4xl">
+                <span className="font-bold text-green-500">Febila </span>
+                Cryptocurrency
               </h1>
-              <p className="text-center mx-auto text-sm leading-10 ">
-                Our transportation and logistics services ensure the seamless
-                movement of goods and people. <br /> With our commitment to
-                reliability, your cargo arrives on time, and your journey is
-                hassle-free.
+              <p className="text-sm text-gray-700 py-10 leading-10">
+                Febila crypto is a department that deals with the promotions and
+                creations of new crypto projects, airdrops and all other crypto
+                activities. There will be alot of golden opportunities in the
+                department
               </p>
             </div>
           </div>
-        </div>
-        {/* Fashion */}
-        <div className="py-10">
-          <div className="fashion_back_img">
-            <div className="flex justify-center items-center fashion_back_img_cover ">
-              <h1 className="text-white text-center text-3xl">
-                Elevate Your Style with{" "}
-                <span className="text-blue-600 font-semibold">FEBILA</span>'s
-                Exclusive Clothing Brand
-              </h1>
-            </div>
-          </div>
-          <div className="w-4/5 ">
-            <h1 className="text-xl font-semibold ml-20 py-8 text-blue-600 sm:text-center">
-              Discover Unparalleled Style
-            </h1>
-          </div>
-          <div className="w-4/5 mx-auto fashion_collection mt-4 ">
-            <div className="collection_content1 rounded-md flex justify-center items-end py-2 px-2 md:mb-4">
-              <div className="w-11/12  text-white   rounded-sm  flex justify-center items-center">
-                All
-              </div>
-            </div>
-            <div className="collection_content2 rounded-md flex justify-center items-end py-2 px-2 md:mb-4">
-              <div className="w-11/12  text-white   rounded-sm  flex justify-center items-center">
-                Men
-              </div>
-            </div>
-            <div className="collection_content3 rounded-md flex justify-center items-end py-2 px-2 md:mb-4">
-              <div className="w-11/12  text-white   rounded-sm  flex justify-center items-center">
-                Women
-              </div>
-            </div>
+          <div className="w-1/2 md:w-11/12 md:mx-auto">
+            <Image src={bitcoin} className="w-4/5 mx-auto rounded-md md:w-full " alt="" />
           </div>
         </div>
+
         {/* FEBILA PUBLISHING */}
-        <div className="flex justify-center items-center py-10 lg:block">
+        <div className="flex mt-40 justify-center items-center py-10 lg:block">
           <div className="w-2/6 flex justify-center items-center ">
             <div className="">
               <Image
@@ -508,13 +483,13 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-2/6 lg:w-4/5 lg:mx-auto">
-            <h1 className="text-center text-3xl leading-15 font-semibold py-3 ">
-              Unleash the Power of <br /> Words with{" "}
-              <span className="text-blue-600">FEBILA</span>
+          <div className="w-2/6 lg:w-4/5 lg:mx-auto sm:w-11/12">
+            <h1 className="text-center text-4xl  leading-15 leading-12 text-gray-700 py-3 sm:w-full sm:text-left">
+              Unleash the Power of <br className="sm:hidden" /> Words with{" "}
+              <span className="text-green-500 font-bold">Febila</span>
             </h1>
-            <p className="text-center mb-10 text-sm leading-10 text-gray-400">
-              At FEBILA Publisher, we curate a diverse and thought-provoking
+            <p className="text-center mb-10 text-sm leading-10 text-gray-400 lg:text-justify">
+              At FEBILA Publishing, we curate a diverse and thought-provoking
               collection of books that span a wide spectrum of genres and
               subjects. Our collection includes
             </p>
@@ -522,7 +497,7 @@ const Home = () => {
               <div className="mb-10">
                 <div className="flex justify-center items-center">
                   <div className="h-4 w-4 bg-gray-300 rounded-full flex justify-center items-center">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   </div>
                   <p className="font-medium px-2">Magazine</p>
                 </div>
@@ -574,184 +549,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Our Mission */}
-        <div className="flex  items-center py-10 lg:block">
-          <div className="w-2/4 lg:w-4/5 lg:mx-auto md:w-11/12">
-            <h1 className="text-3xl text-center font-semibold py-3 lg:text-center">
-              OUR MISSION
-            </h1>
 
-            <div className="py-3">
-              <div className="flex justify-center items-center mb-10 lg:justify-center">
-                <div className="h-4 w-4 bg-blue-600 rounded-full flex justify-center items-center md:w-4 md:h-4"></div>
-                <div>
-                  <p className="text-sm px-3">
-                    Our transportation and logistics services ensure the
-                    seamless <br />
-                    movement of goods and people. With our commitment to
-                    reliability, <br /> your cargo arrives on time, and your
-                    journey is hassle-free.
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center items-center mb-10 lg:justify-center">
-                <div className="w-2  bg-black rounded-full md:w-2 h-2"></div>
+        {/* <div className="w-4/5 mx-auto bg-green-500 h-80 rounded-md my-10">
 
-                <div>
-                  <p className="text-sm px-3">
-                    FEBILA was founded on a simple yet profound mission: to
-                    empower <br /> individuals and businesses to reach their
-                    full potential. We believe <br /> that every dream, no
-                    matter how
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <button className="flex justify-between px-2 py-2 items-center w-40 h-10 rounded-full bg-blue-600">
-                  <span className="text-xs text-white w-4/5 text-center">
-                    Contact Us
-                  </span>
-                  <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                    <Image src={arrow} alt="" className="w-4 h-4" />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="w-2/4 flex justify-center items-center lg:mx-auto lg:w-4/5  sm:w-full">
-            <div className="w-4/5  rounded-full  flex justify-center items-center lg:rounded-none lg:my-3 sm:w-11/12">
-              <Image
-                src={mission}
-                className="w-2/4 rounded-md mission_img object-cover rotate-6 lg:w-4/5 sm:w-11/12"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
+        </div> */}
 
         {/* What our client is saying about us */}
-        <div className="py-10 client-testimony">
-          <h1 className="text-center text-2xl py-11">
-            Hear what people are saying about{" "}
-            <span className="text-blue-600 font-semibold text-4xl">FEBILA</span>
-          </h1>
-          <div className="sayings">
-            <div className="xsm:mb-4">
-              <div className="border border-gray-300 py-2  rounded-md mx-2">
-                <div className="w-28 h-28 mx-auto ">
-                  <Image
-                    src={client1}
-                    className="w-28 h-28  rounded-full object-cover"
-                    alt=""
-                  />
-                </div>
-                <p className="text-center py-1 text-gray-500 text-sm">
-                  Zainab Suliyat
-                </p>
-                <div className="bg-blue-600  w-4/5 mx-auto h-8 rounded-full flex justify-center items-center my-1">
-                  <p className="text-white text-sm">Student @ Ife</p>
-                </div>
-              </div>
-              <div className="my-2 rounded-md">
-                <div className="w-4 h-6 ml-3 bg-gray-200 skew-x-12 rounded-tl-full">
-                  {" "}
-                </div>
-                <div className="w-full py-2 bg-gray-200 rounded-md">
-                  <p className="text-sm text-gray-500 w-11/12 mx-auto text-justify leading-10">
-                    Febila has transformed my life and has helped in my growth
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="xsm:mb-4">
-              <div className="my-2 rounded-md">
-                <div className="w-full py-2 bg-gray-200 rounded-md">
-                  <p className="text-sm text-gray-500 w-11/12 mx-auto text-justify leading-10">
-                    Febila is everything you need in your life
-                  </p>
-                </div>
-                <div className="w-4 h-6 ml-3 bg-gray-200 skew-x-12 rounded-bl-full">
-                  {" "}
-                </div>
-              </div>
-              <div className="border border-gray-300 py-2  rounded-md mx-2">
-                <div className="w-28 h-28 mx-auto ">
-                  <Image
-                    src={client2}
-                    className="w-28 h-28  rounded-full object-cover"
-                    alt=""
-                  />
-                </div>
-                <p className="text-center py-1 text-gray-500 text-sm">
-                  Sandra Tosin
-                </p>
-                <div className="bg-blue-600  w-4/5 mx-auto h-8 rounded-full flex justify-center items-center my-1">
-                  <p className="text-white text-sm">CTO @ fresh</p>
-                </div>
-              </div>
-            </div>
-            <div className="xsm:mb-4">
-              <div className="border border-gray-300 py-2  rounded-md mx-2">
-                <div className="w-28 h-28 mx-auto ">
-                  <Image
-                    src={client3}
-                    className="w-28 h-28  rounded-full object-cover"
-                    alt=""
-                  />
-                </div>
-                <p className="text-center py-1 text-gray-500 text-sm">
-                  Muyiwa Kilafen
-                </p>
-                <div className="bg-blue-600  w-4/5 mx-auto h-8 rounded-full flex justify-center items-center my-1">
-                  <p className="text-white text-sm">Ceo @ meta</p>
-                </div>
-              </div>
-              <div className="my-2 rounded-md">
-                <div className="w-4 h-6 ml-3 bg-gray-200 skew-x-12 rounded-tl-full">
-                  {" "}
-                </div>
-                <div className="w-full py-2 bg-gray-200 rounded-md">
-                  <p className="text-sm text-gray-500 w-11/12 mx-auto text-justify leading-10">
-                    FEBILA got me the land I built my dream house with, it so
-                    easy without any stress
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="hover:bg-white-100">
-              <div className="my-2 rounded-md">
-                <div className="w-full py-2 bg-gray-200 rounded-md">
-                  <p className="text-sm text-gray-500 w-11/12 mx-auto text-justify leading-10">
-                    I get my things moving to their destination at anytime using
-                    FEBILA
-                  </p>
-                </div>
-                <div className="w-4 h-6 ml-3 bg-gray-200 skew-x-12 rounded-bl-full">
-                  {" "}
-                </div>
-              </div>
-              <div className="border border-gray-300 py-2  rounded-md mx-2">
-                <div className="w-28 h-28 mx-auto ">
-                  <Image
-                    src={client4}
-                    className="w-28 h-28  rounded-full object-cover"
-                    alt=""
-                  />
-                </div>
-                <p className="text-center py-1 text-gray-500 text-sm">
-                  Revered F. Ade
-                </p>
-                <div className="bg-blue-600  w-4/5 mx-auto h-8 rounded-full flex justify-center items-center my-1">
-                  <p className="text-white text-sm">CTO @ pondeck</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <Footer />
-      <Sidebar/>
+      <Sidebar />
     </>
   );
 };

@@ -1,146 +1,61 @@
-
-.foundation{
-    width: 100%;
-    height: 500px;
-    background: url("../public/images/children.jpg");
+.hero{
+    background: url(../public/images/estate5.jpg);
+}
+.hero_content{
+    background: #00000072;
+   
+}
+.estate_div{
+    position: relative;
+}
+.estate-background{
+    width: 90%;
+    margin:0 auto;
+    height: 400px;
+    border-radius: 5px;
+    background: url(../public/images/estate6.jpg);
     background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
 }
-.foundation .foundation_content{
-    width: 100%;
-    height: 500px;
-    background: #000000ac;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.estate-foreground{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 270px;
+    left: -70px;
+    border-radius: 5px;
+    object-fit: cover;
 }
-.estate_img_div{
-    height: 600px;
+.fashion_img1{
+     background: url(../public/images/fas2.jpg);
+     background-position: center;
+     background-size: cover;
 }
+
+.fashion_img2{
+     background: url(../public/images/fas2.jpg);
+     background-position: center;
+     background-size: cover;
+}
+.fashion_img3{
+     background: url(../public/images/fas2.jpg);
+     background-position: center;
+     background-size: cover;
+}
+.fashion_img4{
+     background: url(../public/images/fas2.jpg);
+     background-position: center;
+     background-size: cover;
+}
+
 .trans_div{
     width: 100%;
 }
 .trans_div::-webkit-scrollbar{
     width: 0px;
 }
-.trans_logistics{
-    width: 100%;
-    height: 200px;
-      overflow-x: scroll;
-    /* background: url("../public/images/road.jpg");
-  background-size: cover;
-    background-position: center;
-   background-repeat: no-repeat; */
-}
-.trans_logistics::-webkit-scrollbar{
-    width: 0px;
-}
-.car_div{
-    position: relative;
-    animation: car 9s infinite running normal;
-    transition: 1s all ease-out;
-   
-}
-/* @keyframes car {
-    0%{
-        transform: translateX(0px);
-    }
-  
-    100%{
-        transform: translateX(1700px);
-    }
-} */
-.car{
-    width: 400px;
-}
-.wheel1{
-    width:80px;
- top: 85px;
- left: 30px;
-    position: absolute;
-    animation: wheel 9s infinite  running normal;
-    border-radius: 40px;
 
-}
-.wheel2{
-    width:80px;
-    left: 275px;
-    top: 89px;
-    position: absolute;
-  animation: wheel 9s infinite  running normal;
-  border-radius: 40px;
-}
-.febila_car_text{
-    position: absolute;
-    top: 60px;
-    left: 130px;
-
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold; 
-}
-.febila_car_text span{
-    font-weight: 400;
-    font-size: 0.9rem;
-}
-
-@keyframes wheel {
-    0%{
-        transform: rotate(-360deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-.fashion_back_img{
-    width: 100%;
-    height: 500px;
-    background: url("../public/images/fashion.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-.fashion_back_img_cover{
-    width: 100%;
-    height: 500px;
-    background: #000000ac;
-}
-.fashion_collection{
-    display: grid;
-    grid-template-columns: 40% 30% 20%;
-    justify-content: space-between;
-    width: 90%;
-}
-
-.collection_content1{
-    width: 100%;
-    background: url("../public/images/fas1.jpg");
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-}
-.collection_content2{
-    width: 100%;
-    background: url("../public/images/fas2.jpg");
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-}
-.collection_content3{
-    width: 100%;
-    background: url("../public/images/fasion.jpg");
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-}
-.fashion_collection div div{
-    height:170px;
-    background: rgba(0, 0, 0, 0.776);
-}
 .mission_img{
     height: 500px;
 }
@@ -158,11 +73,14 @@
 }
 
 @media (Max-width:1050px){
-    .estate_img_div{
-        height: 400px;
+   
+    .farming_img_div{
+        width: 90%;
+
     }
-    .mission_img{
-        height: 400px;
+    .farming_img_div .img{
+        width: 100%;
+     
     }
 }
 @media (max-width:950px){
@@ -171,26 +89,6 @@
 }
 }
 
-@media (max-width:850px){
-.car{
-    width: 240px;
-}
-.wheel1{
-    width: 50px;
-    top: 50px;
-    left: 20px;
-}
-.wheel2{
-    width: 50px;
-    top: 50px;
-    left: 165px;
-}
-.febila_car_text{
-    left: 70px;
-     top:35px;
-    font-size:0.9rem;
-}
-}
 @media (max-width:800px){
 .sayings{
     grid-template-columns: 25% 25% 25% 25%;
@@ -212,60 +110,17 @@
 
 }
 @media (max-width:450px){
-.sayings{
-    grid-template-columns: 95%;
-  
+.foundation_content{
+    width: 100%;  
 }
-.trans_div{
-    width: 95%;
-    margin: 0 auto;
+.foundation_content_info{
+    width: 90%;
 }
-.trans_div br{
-    display: none;
-}
-.client-testimony{
-    width: 95%;
-    margin:  0 auto;
-}
-}
-
-@media (max-width:560px){
-    .car{
-        width: 100px;
-    }
-    .wheel1{
-        width: 25px;
-        top: 20px;
-        left: 5px;
-    }
-    .wheel2{
-        width: 25px;
-        top: 20px;
-        left: 70px;
-    }
-    .febila_car_text{
-        font-size: 0.5rem;
-        left: 30px;
-        top: 15px;
-    }
-    .febila_car_text span{
-        font-size: 0.5rem;
-        display: none;
-    }
-}
-
-@media (max-width:650px) {
-    .fashion_collection{
-        display: grid;
-        grid-template-columns: 100%;
-
-    }
-    .collection_content{
-        margin-bottom: 20px;
-    }
-    .estate_img_div{
-        width: 100%;
-
-    }
+.estate-foreground{
+    width: 100%;
     
 }
+
+}
+
+

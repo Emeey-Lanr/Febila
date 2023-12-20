@@ -50,7 +50,7 @@ const Footer = () => {
     <>
       <div className="w-full  py-20 bg-gray-100 footer border-t border-blue-200">
         <div className="">
-          <h1 className="text-2xl  font-bold text-blue-600">FEBILA</h1>
+          <h1 className="text-2xl  font-bold text-green-500">FEBILA</h1>
           <p className="text-sm text-gray-400 leading-10">
             Your partner in Endless Possibilities
           </p>
@@ -73,7 +73,7 @@ const Footer = () => {
 
               <button
                 type="submit"
-                className="h-12 w-32 flex justify-center items-center bg-blue-600 rounded-full text-white text-sm "
+                className="h-12 w-32 flex justify-center items-center bg-green-500 rounded-full text-white text-sm "
               >
                 {btnStatus ? <Loading /> : "Subscribe"}
               </button>

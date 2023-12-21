@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import invest from "@/public/icons/invest.svg"
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import { RootState } from "@/Redux/Store"
@@ -29,7 +28,7 @@ const DonateModal = () => {
                 </button>
               </div>
               <div className="h-40 w-40 rounded-full bg-blue-600 mx-auto flex justify-center items-center">
-                <Image src={invest} alt="" />
+                {/* <Image src={invest} alt="" /> */}
               </div>
               <div className="w-11/12 mx-auto my-3">
                 <p className="text-sm leading-10 text-gray-700">

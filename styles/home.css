@@ -2,9 +2,21 @@
     background: url(../public/images/estate5.jpg);
 }
 .hero_content{
-    background: #00000072;
+    position: relative;
+
    
 }
+.background_design1{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px 300px 100px;
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    
+
+}
+
 .estate_div{
     position: relative;
 }
@@ -49,21 +61,9 @@
      background-size: cover;
 }
 
-.trans_div{
-    width: 100%;
-}
-.trans_div::-webkit-scrollbar{
-    width: 0px;
-}
 
-.mission_img{
-    height: 500px;
-}
-.sayings{
-    display:grid;
-    grid-template-columns:20% 20% 20% 20%;
-    justify-content: center;
-}
+
+
 .footer{
     display: grid;
     grid-template-columns: 30% 20% 20% 20%;
@@ -71,8 +71,16 @@
      align-items: center;
 
 }
+@media (max-width:1233px) {
+ .background_design1{
+    left: 250px;
+    
+
+ }
+}
 
 @media (Max-width:1050px){
+    
    
     .farming_img_div{
         width: 90%;
@@ -107,15 +115,21 @@
 .sayings{
     grid-template-columns: 40% 40%;
 }
-
+.estate_div h1{
+    text-align: left;
+}
+.estate_div p{
+    text-align: left;
+}
+.estate_div .btn_div{
+    justify-content: start;
+}
+.background_design1{
+    left: 0;
+}
 }
 @media (max-width:450px){
-.foundation_content{
-    width: 100%;  
-}
-.foundation_content_info{
-    width: 90%;
-}
+
 .estate-foreground{
     width: 100%;
     

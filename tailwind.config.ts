@@ -11,7 +11,7 @@ const config: Config = {
       sidebarIconHide: "651px",
       xsm: {  max: "450px" },
       msm: {  max: "550px" },
-      sm: {  max: "650px" },
+      sm: { min:"1px", max: "650px" },
       mds: {  max: "800px" },
       md: {  max: "950px" },
       lg: {min:"1px",  max: "1050px" },

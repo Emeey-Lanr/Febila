@@ -14,6 +14,7 @@ import { exitOpenModal } from "@/Redux/constituents/errorSuccessModal";
  import Loading from "./Loading";
 import "@/styles/home.css"
 import axios from  "axios"
+import { FaCopyright } from "react-icons/fa";
 const Footer = () => {
   const dispatch = useDispatch()
   const [btnStatus, setBtnStatus] = useState<boolean>(false)
@@ -125,7 +126,7 @@ const Footer = () => {
             <li className="text-gray-600 leading-12 text-sm flex items-center">
               <a href="" className="flex items-center">
                 <Image src={phone} alt="" className="w-4 h-4 " />
-                <span className="mx-2">08152304412</span>
+                <span className="mx-2">+2348083947330</span>
               </a>
             </li>
             <li className="text-gray-600 leading-12 text- flex items-center">
@@ -137,8 +138,8 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p className="text-center text-sm text-gray-500 py-4 border-t broder-blue-100">
-        2023 copyright{" "}
+      <p className="text-center text-sm flex justify-center items-center text-gray-500 py-4 border-t broder-blue-100">
+        <span> copyright</span> <span className="px-2"><FaCopyright  /></span>  <span>2023</span>
       </p>
     </>
   );

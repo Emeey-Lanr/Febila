@@ -12,12 +12,11 @@ const Navbar = () => {
   const dispatch = useDispatch<AppDispatch>()
   return (
     <>
-  
-       <div>
-        <div className="w-full flex justify-between items-center sticky top-0">
+      <div>
+        <div className="w-full flex justify-between items-center border-b border-green-100 sticky top-0">
           <div className="w-2/4  h-20  flex items-center">
             <div className="w-4/5 flex items-center mx-auto">
-              <Image src={logo} className="w-12" alt=""/>
+              <Image src={logo} className="w-12" alt="" />
               <Link href="/" className="text-black text-xl pl-4">
                 Febila
               </Link>
@@ -32,17 +31,23 @@ const Navbar = () => {
               <span className="block mx-auto w-8 h-1 bg-gray-800 rounded-full"></span>
             </button>
           </div>
-        <div className="w-2/4  flex justify-end  items-center sm:hidden">
+          <div className="w-2/4  flex justify-end  items-center sm:hidden">
             <div className="pr-10">
               <div className="mx-auto  flex justify-between items-center">
                 <div className="px-10">
-                  <Link href="/" className="text-sm">
+                  <Link
+                    href="/"
+                    className="text-sm hover:border-b-2 hover:border-green-500 transition"
+                  >
                     Home
                   </Link>
                 </div>
-                <div className="px-10">
-                  <Link href="/donate" className="text-sm">
-                    Donate
+                <div className="px-10 ">
+                  <Link
+                    href="/about/us"
+                    className="text-sm hover:border-b-2 hover:border-green-500 transition"
+                  >
+                    About Us
                   </Link>
                 </div>
                 <div>
@@ -62,8 +67,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div> 
-   
+      </div>
     </>
   );
 }

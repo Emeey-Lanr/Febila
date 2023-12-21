@@ -90,41 +90,43 @@ const Home = () => {
             <span className="text-4xl font-bold text-green-500">FEBILA</span>
           </h1>
         </div>
-        <marquee direction="right">
-          <div className="flex justify-around items-center pb-20">
-            <div className="flex items-center">
-              <span></span>
-              <span className="text-2xl italic font-bold text-gray-300 ">
-                Cryptocurrency
-              </span>
-            </div>
-            <div className="flex items-center lg:px-20">
-              <span></span>
-              <span className="text-2xl italic font-bold text-gray-300 ">
-                Agriculture
-              </span>
-            </div>
-            <div className="flex items-center lg:px-20">
-              <span></span>
-              <span className="text-2xl italic font-bold text-gray-300 ">
-                Publishing
-              </span>
-            </div>
-            <div className="flex items-center lg:px-20">
-              <span></span>
-              <span className="text-2xl italic font-bold text-gray-300 ">
-                Real Estate
-              </span>
-            </div>
+        <div className="about_details_div">
+          <div className="about_details">
+            <div className="flex justify-around items-center pb-20">
+              <div className="flex items-center">
+                <span></span>
+                <span className="text-2xl italic font-bold text-gray-300 ">
+                  Cryptocurrency
+                </span>
+              </div>
+              <div className="flex items-center lg:px-20">
+                <span></span>
+                <span className="text-2xl italic font-bold text-gray-300 ">
+                  Agriculture
+                </span>
+              </div>
+              <div className="flex items-center lg:px-20">
+              
+                <span className="text-2xl italic font-bold text-gray-300 ">
+                  Publishing
+                </span>
+              </div>
+              <div className="flex  items-center lg:px-20">
+             
+                <span className="text-2xl italic font-bold text-gray-300 ">
+                  Real-Estate
+                </span>
+              </div>
 
-            <div className="flex items-center">
-              <span></span>
-              <span className="text-2xl italic font-bold text-gray-300 ">
-                Logistics & Transportation
-              </span>
+              <div className="flex items-center">
+                <span></span>
+                <span className="text-2xl italic font-bold text-gray-300 ">
+                  Logistics & Transportation
+                </span>
+              </div>
             </div>
           </div>
-        </marquee>
+        </div>
 
         <div className="flex justify-around items-center lg:block  lg:w-full ">
           <div className="w-1/2 lg:mx-auto lg:w-4/5 xsm:w-full ">
@@ -137,7 +139,7 @@ const Home = () => {
 
           <div className="w-1/2 lg:w-11/12  lg:mx-auto lg:mt-10 sm:mx-auto  foundation_content">
             <div className="w-5/6 mx-auto sm:w-full">
-              <h1 className="text-center leading-10 text-gray-600 text-4xl sm:text-left">
+              <h1 className="text-center leading-10 text-gray-600 text-4xl sm:text-center">
                 <span className="text-green-500 font-bold">Febila</span>{" "}
                 Foundation
               </h1>

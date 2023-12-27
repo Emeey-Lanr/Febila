@@ -1,0 +1,23 @@
+/* .scribble1{
+    width: 100px;
+    height: 5px;
+    border-radius: 10px 20px 20px;
+    transform: skew(80deg);
+
+    position: absolute;
+    left: 500px;
+     top: 210px;
+} */
+.scribble3{
+    display: block;
+    width: 100px;
+    height: 5px;
+    border-radius: 10px 20px 20px;
+    transform: skew(80deg);
+
+    position: absolute;
+   
+}
+.h1_about_us{
+    width: 500px;
+}

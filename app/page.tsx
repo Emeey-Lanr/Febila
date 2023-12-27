@@ -12,6 +12,7 @@ import estate3 from "@/public/images/estate5.jpg";
 import bitcoin from "@/public/images/bitcoin.jpg"
 import farm1 from "@/public/images/land.jpg"
 import farm2 from "@/public/images/farm2.jpg"
+import forex from "@/public/images/forex.jpg"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import misson from "@/public/images/hero1.png"
@@ -106,13 +107,11 @@ const Home = () => {
                 </span>
               </div>
               <div className="flex items-center lg:px-20">
-              
                 <span className="text-2xl italic font-bold text-gray-300 ">
                   Publishing
                 </span>
               </div>
               <div className="flex  items-center lg:px-20">
-             
                 <span className="text-2xl italic font-bold text-gray-300 ">
                   Real-Estate
                 </span>
@@ -394,7 +393,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex  items-center mt-40 py-10 md:block">
+        <div className="flex  items-center mt-40 py-10  md:block">
           <div className="w-1/2 md:w-11/12 md:mx-auto">
             <div className="w-4/5 mx-auto md:w-full">
               <h1 className="text-4xl leading-14">
@@ -417,7 +416,45 @@ const Home = () => {
             />
           </div>
         </div>
+        {/* Febila Forex */}
+        <div className="flex  items-center mt-40 py-10  md:block">
+           <div className="w-1/2 md:w-11/12 md:mx-auto">
+            <Image
+              src={forex}
+              className="w-4/5 mx-auto rounded-md md:w-full "
+              alt=""
+            />
+          </div>
+          <div className="w-1/2 md:w-11/12 md:mx-auto">
+            <div className="w-4/5 mx-auto md:w-full">
+              <h1 className="text-4xl leading-14">
+                <span className="font-bold text-green-500">Febila </span> Forex & <br/>
+                Stock Exchange
+              </h1>
+              <p className="text-sm text-gray-600 py-10 leading-10">
+                <span className="w-6 h-2 block bg-green-400"></span>
+                 A stock exchange enthusiast proficient in analyzing company
+              financials, evaluating investment opportunities, and making
+              informed tradin decisions. We are dedicated to continous learning
+              and staying updated on the lastest market developments to leverage
+              skills and knowledge to achie
+              </p>
+              <p className="text-sm text-gray-600 py-10 leading-10">
+                 <span className="w-6 h-2 block bg-green-400"></span>
+                 A stock exchange enthusiast proficient in analyzing company
+              financials, evaluating investment opportunities, and making
+              informed tradin decisions. We are dedicated to continous learning
+              and staying updated on the lastest market developments to leverage
+              skills and knowledge to achie
+              </p>
+            </div>
+          </div>
+         
+        </div>
+        
+          
 
+           
         {/* FEBILA PUBLISHING */}
         <div className="flex mt-40 justify-center items-center py-10 lg:block">
           <div className="w-2/6 flex justify-center items-center ">

@@ -44,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <div className="px-10 ">
                   <Link
-                    href="/about/us"
+                    href="/about-us"
                     className="text-sm hover:border-b-2 hover:border-green-500 transition"
                   >
                     About Us

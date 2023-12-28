@@ -20,6 +20,7 @@ import {FaHospital, FaBook, FaWater, FaAnchor, FaArrowRight} from "react-icons/f
 
 import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
+import Marquee from "react-fast-marquee"
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -91,38 +92,46 @@ const Home = () => {
             <span className="text-4xl font-bold text-green-500">FEBILA</span>
           </h1>
         </div>
-        <div className="about_details_div">
-          <div className="about_details">
-            <div className="flex justify-around items-center pb-20">
-              <div className="flex items-center">
-                <span></span>
-                <span className="text-2xl italic font-bold text-gray-300 ">
-                  Cryptocurrency
-                </span>
-              </div>
-              <div className="flex items-center lg:px-20">
-                <span></span>
-                <span className="text-2xl italic font-bold text-gray-300 ">
-                  Agriculture
-                </span>
-              </div>
-              <div className="flex items-center lg:px-20">
-                <span className="text-2xl italic font-bold text-gray-300 ">
-                  Publishing
-                </span>
-              </div>
-              <div className="flex  items-center lg:px-20">
-                <span className="text-2xl italic font-bold text-gray-300 ">
-                  Real-Estate
-                </span>
-              </div>
+        {/* <div>
+          <Marquee>
+            <div>Hello</div>
+            <div>Hi</div>
+          </Marquee>
+        </div> */}
+        <div>
+          <div>
+            <div className=" pb-20">
+              <Marquee className="flex justify-around ">
+                <div className="flex items-center px-20 ">
+                  <span></span>
+                  <span className="text-2xl italic font-bold text-gray-300 ">
+                    Cryptocurrency
+                  </span>
+                </div>
+                <div className="flex items-center px-20">
+                  <span></span>
+                  <span className="text-2xl italic font-bold text-gray-300 ">
+                    Agriculture
+                  </span>
+                </div>
+                <div className="flex items-center px-20">
+                  <span className="text-2xl italic font-bold text-gray-300 ">
+                    Publishing
+                  </span>
+                </div>
+                <div className="flex  items-center px-20">
+                  <span className="text-2xl italic font-bold text-gray-300 ">
+                    Real-Estate
+                  </span>
+                </div>
 
-              <div className="flex items-center">
-                <span></span>
-                <span className="text-2xl italic font-bold text-gray-300 ">
-                  Logistics & Transportation
-                </span>
-              </div>
+                <div className="flex items-center">
+                  <span></span>
+                  <span className="text-2xl italic font-bold text-gray-300 ">
+                    Logistics & Transportation
+                  </span>
+                </div>
+              </Marquee>
             </div>
           </div>
         </div>
@@ -283,7 +292,7 @@ const Home = () => {
             </div>
             <div className="w-2/5 flex items-center py-5 lg:w-full lg:mx-auto">
               <div className="w-2 h-2 rounded-md bg-green-500 mx-3"></div>
-              <p className="text-sm w-11/12 text-gray-500  flex items-center">
+              <p className="text-sm w-11/12 text-gray-600  flex items-center">
                 <span>
                   We offer opportunities for individuals and businesses to be
                   part of our mission.
@@ -418,7 +427,7 @@ const Home = () => {
         </div>
         {/* Febila Forex */}
         <div className="flex  items-center mt-40 py-10  md:block">
-           <div className="w-1/2 md:w-11/12 md:mx-auto">
+          <div className="w-1/2 md:w-11/12 md:mx-auto">
             <Image
               src={forex}
               className="w-4/5 mx-auto rounded-md md:w-full "
@@ -428,33 +437,30 @@ const Home = () => {
           <div className="w-1/2 md:w-11/12 md:mx-auto">
             <div className="w-4/5 mx-auto md:w-full">
               <h1 className="text-4xl leading-14">
-                <span className="font-bold text-green-500">Febila </span> Forex & <br/>
+                <span className="font-bold text-green-500">Febila </span> Forex
+                & <br />
                 Stock Exchange
               </h1>
               <p className="text-sm text-gray-600 py-10 leading-10">
-                <span className="w-6 h-2 block bg-green-400"></span>
-                 A stock exchange enthusiast proficient in analyzing company
-              financials, evaluating investment opportunities, and making
-              informed tradin decisions. We are dedicated to continous learning
-              and staying updated on the lastest market developments to leverage
-              skills and knowledge to achie
+                <span className="w-6 h-2 block bg-green-400"></span>A stock
+                exchange enthusiast proficient in analyzing company financials,
+                evaluating investment opportunities, and making informed tradin
+                decisions. We are dedicated to continous learning and staying
+                updated on the lastest market developments to leverage skills
+                and knowledge to achieve
               </p>
               <p className="text-sm text-gray-600 py-10 leading-10">
-                 <span className="w-6 h-2 block bg-green-400"></span>
-                 A stock exchange enthusiast proficient in analyzing company
-              financials, evaluating investment opportunities, and making
-              informed tradin decisions. We are dedicated to continous learning
-              and staying updated on the lastest market developments to leverage
-              skills and knowledge to achie
+                <span className="w-6 h-2 block bg-green-400"></span>we
+                specialize in the in-depth analysis of global currencies. Our
+                team of experts is adept at interpreting economic indicators,
+                understanding geopolitical influences, and staying attuned to
+                market sentiment. This comprehensive approach allows us to
+                provide you with insights
               </p>
             </div>
           </div>
-         
         </div>
-        
-          
 
-           
         {/* FEBILA PUBLISHING */}
         <div className="flex mt-40 justify-center items-center py-10 lg:block">
           <div className="w-2/6 flex justify-center items-center ">
@@ -473,7 +479,7 @@ const Home = () => {
           </div>
 
           <div className="w-2/6 lg:w-4/5 lg:mx-auto sm:w-11/12">
-            <h1 className="text-center text-4xl  leading-14 text-gray-600 py-3 sm:w-full sm:text-center">
+            <h1 className="text-center text-4xl  leading-14 text-gray-800 py-3 sm:w-full sm:text-center">
               Unleash the Power of <br className="sm:hidden" /> Words with{" "}
               <span className="text-green-500 font-bold">Febila</span>
             </h1>
@@ -544,42 +550,35 @@ const Home = () => {
               Our Mission
             </h1>
             <p className="text-sm text-gray-600 leading-12 w-4/5 mx-auto lg:w-11/12 lg:text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perferendis consectetur necessitatibus eligendi? Libero dolor
-              corporis nam? Debitis ducimus perspiciatis accusamus?
+              we are more than just a company; we are a promise of endless
+              possibilities and transformative experiences
             </p>
             <div className="w-4/5 mx-auto">
               <div className="flex items-center mt-10 lg:justify-center">
                 <span className="flex w-4 h-4 bg-green-200  justify-center items-center rounded-full mr-3">
                   <span className="block w-2 h-2 bg-green-500 rounded-full"></span>
                 </span>
-                <p className="text-xs leading-10">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam, consequuntur.
+                <p className="text-xs leading-10 text-gray-600">
+                  Our diverse range of services is designed to cater to your
+                  personal, professional, and creative needs, making us your
+                  ultimate partner on the journey to excellence.
                 </p>
               </div>
               <div className="flex items-center mt-10 lg:justify-center">
                 <span className="flex w-4 h-4 bg-green-200  justify-center items-center rounded-full mr-3">
                   <span className="block w-2 h-2 bg-green-500 rounded-full"></span>
                 </span>
-                <p className="text-xs leading-10">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam, consequuntur.
+                <p className="text-xs leading-10 text-gray-600">
+                  FEBILA was founded on a simple yet profound mission: to
+                  empower individuals and businesses to reach their full
+                  potential. We believe that every dream, no matter how
                 </p>
               </div>
-              <div className="flex items-center mt-10 lg:justify-center">
-                <span className="flex w-4 h-4 bg-green-200  justify-center items-center rounded-full mr-3">
-                  <span className="block w-2 h-2 bg-green-500 rounded-full"></span>
-                </span>
-                <p className="text-xs leading-10">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam, consequuntur.
-                </p>
-              </div>
+
               <div className="lg:flex lg:justify-center">
                 <button className="flex justify-between px-2 py-2 mt-10 items-center w-40 h-10 rounded-full bg-green-500">
                   <span className="text-xs text-white w-4/5 text-center">
-                    Learn More
+                    <a target="_blank" href="https://wa.link/4avh39">Learn More</a>
                   </span>
                   <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
                     <FaArrowRight className="rotate-4" />

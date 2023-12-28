@@ -9,13 +9,11 @@ import { AppContextAPI } from "@/context api/context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
-import {useEffect} from "react"
+
 const page = () => {
   const { openModalExitModal } = useContext(AppContextAPI);
   const [btnStatus, setBtnStatus] = useState(false);
-  useEffect(() => {
-    alert(process.env.NEXT_PUBLIC_API_ROUTE);
-  },[])
+ 
   const formik = useFormik({
     initialValues: {
       first_name: "",

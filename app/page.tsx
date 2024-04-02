@@ -15,12 +15,14 @@ import farm2 from "@/public/images/farm2.jpg"
 import forex from "@/public/images/forex.jpg"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import misson from "@/public/images/hero1.png"
+import vide from "@/public/images/vid.mp4"
 import {FaHospital, FaBook, FaWater, FaAnchor, FaArrowRight} from "react-icons/fa"
 
 import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
 import Marquee from "react-fast-marquee"
+import Video from "next-video"
+
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -46,17 +48,37 @@ const Home = () => {
   };
   return (
     <>
+    <div className="relative w-full overflow-hidden">
+      <video src={vide} autoPlay loop  className="absolute w-full h-[500px]"></video>
+    </div>
       <Navbar />
       <div>
         {/* Hero Section */}
-        <div className="background_design1 bg-green-500"></div>
+        {/* <div className="background_design1 bg-green-500"></div> */}
         <div className="hero_content items-center  border-t border-t-blue-100 md:block">
           <div className="py-20 mx-auto flex justify-center items-center md:w-full">
-            <div className="w-full">
-              <h1 className="text-4xl w-11/12 mx-auto py-2 text-center  text-grey-600 font-medium hero_text leading-20">
-                UNLOCKING INIFINITE <br /> POSIBILITIES FOR{" "}
+            <div className="w-full ">
+              <h1 className="text-4xl text-center flex justify-center xsm:block">
+                <span>
+                  <span>UNLOCKING</span>
+                  <span className="w-40 h-2 rotate-2 bg-green-600 mt-2 block mx-auto"></span>
+                </span>{" "}
+                <span className="px-5">INFINITE</span>
+              </h1>
+              <h1 className="text-4xl text-center py-5 xsm:block xsm:leading-20">
+                <span>POSSIBILIES FOR</span>
                 <span className="text-green-500 font-bold text-5xl">YOU</span>
               </h1>
+              {/* <h1 className="flex justify-center text-4xl w-11/12 mx-auto py-2 text-center  text-grey-600 font-medium hero_text leading-20">
+                <span>
+                  <span>UNLOCKING</span>
+                  <span className="block w-10 h-2 bg-green-600 text-center"></span>
+                </span>{" "}
+                <span>
+                  INIFINITE <br /> POSIBILITIES FOR
+                </span>
+                <span className="text-green-500 font-bold text-5xl">YOU</span>
+              </h1> */}
               <p
                 className={`py-2 text-sm  w-11/12 mx-auto   leading-12 text-center text-gray-500`}
               >
@@ -139,7 +161,7 @@ const Home = () => {
         <div className="flex justify-around items-center lg:block  lg:w-full ">
           <div className="w-1/2 lg:mx-auto lg:w-4/5 xsm:w-full ">
             <Image
-              className="w-4/5  rounded-t-full mx-auto xsm:w-full"
+              className="w-4/5  rounded-md mx-auto xsm:w-full"
               src={children}
               alt=""
             />
@@ -243,11 +265,7 @@ const Home = () => {
             <div></div>
           </div>
           <div className="w-1/2 estate_div lg:w-11/12 lg:mx-auto">
-            <div className="estate-background flex justify-center items-center">
-              <button className="w-12 h-12 rounded-full bg-white">
-                <span></span>
-              </button>
-            </div>
+            <div className="estate-background flex justify-center items-center"></div>
             <div className="estate-foreground">
               <Image className="img w-full h-full" src={estate3} alt="" />
             </div>
@@ -427,6 +445,10 @@ const Home = () => {
         </div>
         {/* Febila Forex */}
         <div className="flex  items-center mt-40 py-10  md:block">
+          <h1 className="text-4xl w-11/12 py-4 mx-auto leading-14 hidden md:block">
+            <span className="font-bold text-green-500">Febila </span> Forex &{" "}
+            Stock Exchange
+          </h1>
           <div className="w-1/2 md:w-11/12 md:mx-auto">
             <Image
               src={forex}
@@ -436,7 +458,7 @@ const Home = () => {
           </div>
           <div className="w-1/2 md:w-11/12 md:mx-auto">
             <div className="w-4/5 mx-auto md:w-full">
-              <h1 className="text-4xl leading-14">
+              <h1 className="text-4xl leading-14 md:hidden">
                 <span className="font-bold text-green-500">Febila </span> Forex
                 & <br />
                 Stock Exchange
@@ -462,134 +484,56 @@ const Home = () => {
         </div>
 
         {/* FEBILA PUBLISHING */}
-        <div className="flex mt-40 justify-center items-center py-10 lg:block">
-          <div className="w-2/6 flex justify-center items-center ">
-            <div className="">
-              <Image
-                src={book}
-                alt=""
-                className="w-40 h-40 object-cover mb-20  lg:mb-0"
-              />
-              <Image
-                src={book}
-                alt=""
-                className="w-40 h-40 object-cover mb-20 ml-20  lg:mb-0"
-              />
-            </div>
-          </div>
-
-          <div className="w-2/6 lg:w-4/5 lg:mx-auto sm:w-11/12">
+        <div className="py-10">
+          <div className="mx-auto lg:w-4/5 lg:mx-auto sm:w-11/12">
             <h1 className="text-center text-4xl  leading-14 text-gray-800 py-3 sm:w-full sm:text-center">
               Unleash the Power of <br className="sm:hidden" /> Words with{" "}
               <span className="text-green-500 font-bold">Febila</span>
             </h1>
             <p className="text-center mb-10 text-sm leading-10 text-gray-600 lg:text-center  sm:text-justify">
-              At FEBILA Publishing, we curate a diverse and thought-provoking
+              At FEBILA Publishing, we curate a diverse and thought-provoking{" "}
+              <br />
               collection of books that span a wide spectrum of genres and
               subjects. Our collection includes
             </p>
-            <div className="flex xsm:block">
-              <div className="mb-10">
+            <div className="flex justify-around w-full py-10 sm:block">
+              <div className="w-[30%] sm:w-11/12 sm:mx-auto sm:py-5">
                 <div className="flex justify-center items-center">
                   <div className="h-4 w-4 bg-gray-300 rounded-full flex justify-center items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  </div>
-                  <p className="font-medium px-2">Magazine</p>
+                  </div>{" "}
+                  <p className="font-bold text-black px-2">Magazine</p>
                 </div>
                 <p className="text-center text-sm text-gray-600 leading-10">
-                  Immerse in captivating stories, insightful articles, and
+                  Immerse in captivating stories <br /> insightful articles, and
                   visually stunning features
                 </p>
               </div>
-              <div className="px-3 xsm:mb-10">
+              <div className="w-[30%] sm:w-11/12 sm:mx-auto sm:py-5">
                 <div className="flex justify-center items-center">
-                  <div className="h-4 w-4  rounded-full flex justify-center items-center">
+                  {" "}
+                  <div className="h-4 w-4 bg-gray-300 rounded-full flex justify-center items-center">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                   </div>
-                  <p className="font-bold px-2">Literary Books</p>
+                  <p className="font-bold text-black px-2">Literary Books</p>
                 </div>
                 <p className="text-center text-sm text-gray-600 leading-10">
-                  Dive into the transformative power of literature at FEBILA
-                  Publisher
+                  Dive into the transformative <br /> power of literature at
+                  FEBILA Publisher
                 </p>
               </div>
-            </div>
-            <div className="flex justify-center items-center">
-              <div className="mb-10">
+              <div className="w-[30%] sm:w-11/12 sm:mx-auto sm:py-5">
                 <div className="flex justify-center items-center">
-                  <div className="h-4 w-4  rounded-full flex justify-center items-center">
+                  <div className="h-4 w-4 bg-gray-300 rounded-full flex justify-center items-center">
                     <div className="w-2 h-2 bg-black rounded-full"></div>
                   </div>
-                  <p className="font-bold px-2">Others</p>
+                  <p className="font-bold text-black px-2">Others</p>
                 </div>
                 <p className="text-center text-sm text-gray-600 leading-10">
                   Explore topics that captivate, <br /> curated to stimulate
                   your mind and imagination
                 </p>
               </div>
-            </div>
-          </div>
-          <div className="w-2/6 flex justify-center items-center lg:w-full lg:justify-end">
-            <div>
-              <Image
-                src={book}
-                alt=""
-                className="w-40 h-40 object-cover mb-20 ml-20 lg:mb-0 lg:ml-0 lg:block"
-              />
-              <Image
-                src={book}
-                alt=""
-                className="w-40 h-40 object-cover mb-20 lg:mb-0 "
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center lg:block">
-          <div className="w-1/2 items-center lg:w-full">
-            <h1 className="text-4xl py-10 w-4/5 mx-auto font-bold text-green-500 lg:w-11/12 lg:text-center">
-              Our Mission
-            </h1>
-            <p className="text-sm text-gray-600 leading-12 w-4/5 mx-auto lg:w-11/12 lg:text-center">
-              we are more than just a company; we are a promise of endless
-              possibilities and transformative experiences
-            </p>
-            <div className="w-4/5 mx-auto">
-              <div className="flex items-center mt-10 lg:justify-center">
-                <span className="flex w-4 h-4 bg-green-200  justify-center items-center rounded-full mr-3">
-                  <span className="block w-2 h-2 bg-green-500 rounded-full"></span>
-                </span>
-                <p className="text-xs leading-10 text-gray-600">
-                  Our diverse range of services is designed to cater to your
-                  personal, professional, and creative needs, making us your
-                  ultimate partner on the journey to excellence.
-                </p>
-              </div>
-              <div className="flex items-center mt-10 lg:justify-center">
-                <span className="flex w-4 h-4 bg-green-200  justify-center items-center rounded-full mr-3">
-                  <span className="block w-2 h-2 bg-green-500 rounded-full"></span>
-                </span>
-                <p className="text-xs leading-10 text-gray-600">
-                  FEBILA was founded on a simple yet profound mission: to
-                  empower individuals and businesses to reach their full
-                  potential. We believe that every dream, no matter how
-                </p>
-              </div>
-
-              <div className="lg:flex lg:justify-center">
-                <button className="flex justify-between px-2 py-2 mt-10 items-center w-40 h-10 rounded-full bg-green-500">
-                  <span className="text-xs text-white w-4/5 text-center">
-                    <a target="_blank" href="https://wa.link/4avh39">Learn More</a>
-                  </span>
-                  <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                    <FaArrowRight className="rotate-4" />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center rounded-full">
-            <div>
-              <Image src={misson} alt="" />
             </div>
           </div>
         </div>

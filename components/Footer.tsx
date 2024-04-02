@@ -139,7 +139,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-center text-sm flex justify-center items-center text-gray-500 py-4 border-t broder-blue-100">
-        <span> copyright</span> <span className="px-2"><FaCopyright  /></span>  <span>2023</span>
+        <span> copyright</span> <span className="px-2"><FaCopyright  /></span>  <span>2024</span>
       </p>
     </>
   );

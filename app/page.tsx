@@ -2,7 +2,6 @@
 import Image from "next/image";
 import "@/styles/home.css";
 import "@/styles/animation_home.css";
-import book from "@/public/images/magazine.jpg";
 import children from "@/public/images/children.jpg"
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "@/Redux/Store";
@@ -15,14 +14,11 @@ import farm2 from "@/public/images/farm2.jpg"
 import forex from "@/public/images/forex.jpg"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import vide from "@/public/images/vid.mp4"
 import {FaHospital, FaBook, FaWater, FaAnchor, FaArrowRight} from "react-icons/fa"
 
 import { useRouter } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
 import Marquee from "react-fast-marquee"
-import Video from "next-video"
-
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -48,13 +44,11 @@ const Home = () => {
   };
   return (
     <>
-    <div className="relative w-full overflow-hidden">
-      <video src={vide} autoPlay loop  className="absolute w-full h-[500px]"></video>
-    </div>
+  
       <Navbar />
       <div>
         {/* Hero Section */}
-        {/* <div className="background_design1 bg-green-500"></div> */}
+
         <div className="hero_content items-center  border-t border-t-blue-100 md:block">
           <div className="py-20 mx-auto flex justify-center items-center md:w-full">
             <div className="w-full ">
@@ -69,16 +63,7 @@ const Home = () => {
                 <span>POSSIBILIES FOR</span>
                 <span className="text-green-500 font-bold text-5xl">YOU</span>
               </h1>
-              {/* <h1 className="flex justify-center text-4xl w-11/12 mx-auto py-2 text-center  text-grey-600 font-medium hero_text leading-20">
-                <span>
-                  <span>UNLOCKING</span>
-                  <span className="block w-10 h-2 bg-green-600 text-center"></span>
-                </span>{" "}
-                <span>
-                  INIFINITE <br /> POSIBILITIES FOR
-                </span>
-                <span className="text-green-500 font-bold text-5xl">YOU</span>
-              </h1> */}
+           
               <p
                 className={`py-2 text-sm  w-11/12 mx-auto   leading-12 text-center text-gray-500`}
               >

@@ -37,19 +37,19 @@ const Sidebar = () => {
 
         <button
           onClick={() => switchRoute("")}
-          className="w-4/5 my-7 txet-gray-600  flex justify-center text-3xl items-center  mx-auto  font-bold   "
+          className="w-4/5 my-7 text-gray-600  flex justify-center text-3xl items-center  mx-auto  font-bold   "
         >
           Home
         </button>
         <button
           onClick={() => switchRoute("about-us")}
-          className="w-4/5  my-7 txet-gray-600 flex justify-center text-3xl items-center  mx-auto   font-bold  "
+          className="w-4/5  my-7 text-gray-600 flex justify-center text-3xl items-center  mx-auto   font-bold  "
         >
           About Us
         </button>
         <button
           onClick={() => switchRoute("contact")}
-          className="w-4/5  my-7 txet-gray-600 text-3xl  mb-5 flex font-bold  justify-center items-center  mx-auto"
+          className="w-4/5  my-7 text-gray-600 text-3xl  mb-5 flex font-bold  justify-center items-center  mx-auto"
         > 
           Contact Us
         </button>

@@ -138,6 +138,7 @@ const page = () => {
         </div>
       </div>
       <div>
+          <Sidebar />
         <Footer />
       </div>
     </div>

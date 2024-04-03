@@ -132,7 +132,7 @@ const Footer = () => {
             <li className="text-gray-600 leading-12 text- flex items-center">
               <a href="" className="flex items-center">
                 <Image src={mail} alt="email" className="w-4 h-4 " />
-                <span className="mx-2">febila@gmail.com</span>
+                <span className="mx-2">febilafba@gmail.com</span>
               </a>
             </li>
           </ul>

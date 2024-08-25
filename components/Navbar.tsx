@@ -1,74 +1,221 @@
 'use client'
-import Link from "next/link"
-import Image from "next/image"
-import arrow from "@/public/icons/arrow.svg"
-import {useDispatch} from"react-redux"
-import { AppDispatch } from "@/Redux/Store"
-import { changeSidebar } from "@/Redux/constituents/sidebar"
-import { useRouter } from "next/navigation"
-import logo from "@/public/icons/logo_green_png.png"
+import Link from "next/link";
+import { useContext } from "react";
+import { AppContextAPI } from "@/context api/context";
+import { usePathname } from "next/navigation";
 const Navbar = () => {
-  const router = useRouter()
-  const dispatch = useDispatch<AppDispatch>()
+  const pathname = usePathname()
+    const {openCloseSideBarBtn} = useContext(AppContextAPI);
   return (
-    <>
+    <div className="helFnt px-[32px] py-[24px] md:py-[32px] mx-auto flex justify-between items-center">
+      {/* Logo */}
       <div>
-        <div className="w-full flex justify-between items-center border-b border-green-100 sticky top-0">
-          <div className="w-2/4  h-20  flex items-center">
-            <div className="w-4/5 flex items-center mx-auto">
-              <Image src={logo} className="w-12" alt="" />
-              <Link href="/" className="text-black text-xl pl-4">
-                Febila
-              </Link>
-            </div>
-          </div>
-          <div className="sidebarIconHide:hidden">
-            <button
-              className="w-20"
-              onClick={() => dispatch(changeSidebar("openSidebar"))}
+        <svg
+          className="w-[24px] h-[24px] lg:w-[42px] lg:h-[42px]"
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M1 25V1H25V25H1Z" fill="#1CE34A" />
+          <path
+            d="M2.5 8.5V2.5H23.5V16M2.5 8.5H13V10H2.5M2.5 8.5V10M2.5 10V23.5H23.5V17.5M23.5 17.5H13V16H23.5M23.5 17.5V16M1 1V25H25V1H1Z"
+            stroke="white"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      {/* navigation */}
+      <div>
+        <ul className="hidden lg:flex sm:block">
+          <li className="px-[24px] text-grey-800">
+            <Link
+              href={"/index"}
+              className={`text-base ${pathname === "/" && "font-bold"}`}
             >
-              <span className="block mx-auto my-2 w-6 h-1 bg-gray-800 rounded-full"></span>
-              <span className="block mx-auto w-8 h-1 bg-gray-800 rounded-full"></span>
-            </button>
-          </div>
-          <div className="w-2/4  flex justify-end  items-center sm:hidden">
-            <div className="pr-10">
-              <div className="mx-auto  flex justify-between items-center">
-                <div className="px-10">
-                  <Link
-                    href="/"
-                    className="text-sm hover:border-b-2 hover:border-green-500 transition"
-                  >
-                    Home
-                  </Link>
-                </div>
-                <div className="px-10 ">
-                  <Link
-                    href="/about-us"
-                    className="text-sm hover:border-b-2 hover:border-green-500 transition"
-                  >
-                    About Us
-                  </Link>
-                </div>
-                <div>
-                  <button
-                    onClick={() => router.push("/contact")}
-                    className="flex justify-between px-2 py-2 items-center w-40 h-10 rounded-full bg-green-500"
-                  >
-                    <span className="text-xs text-white w-4/5 text-center">
-                      Contact Us
-                    </span>
-                    <span className="h-8 w-8 rounded-full bg-white flex justify-center items-center">
-                      <Image src={arrow} className="w-3" alt="" />
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+              Home
+            </Link>
+          </li>
+          <li className="group/services  flex justify-start items-center relative px-[24px] text-grey-800">
+            <span className="text-base flex items-center">
+              Services{" "}
+              <span className="px-[8px]">
+                <svg
+                  className="rotate-[180deg] group-hover/services:rotate-[0deg]"
+                  width="16"
+                  height="8"
+                  viewBox="0 0 18 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 9L9 0.999999L0.999998 9"
+                    stroke="#2E3830"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+            <ul
+              // style={{ backgroundColor: "white" }}
+              className="absolute z-50 bg-grey-50 border border-grey-200 px-[24px] py-[24px] top-[100%] hidden opacity-0 invisible translate-x-[-1rem] transition-all duration-75 delay-75 ease-in-out group-hover/services:block group-hover/services:visible group-hover/services:opacity-[1] group-hover/services:translate-x-0 group-hover/services:transition-all group-hover/services:ease-in-out "
+            >
+              <li>
+                <Link
+                  className="text-sm py-[8px] px-[8px] text-grey-700 rounded-sm flex justify-between hover:bg-grey-100 hover:text-grey-900"
+                  href={""}
+                >
+                  Real Estate{" "}
+                  <span>
+                    <svg
+                      className="rotate-[45deg]"
+                      width="14"
+                      height="6"
+                      viewBox="0 0 18 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 9L9 0.999999L0.999998 9"
+                        stroke="#2E3830"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm py-[8px] px-[8px] text-grey-700 flex justify-between hover:bg-grey-100 hover:text-grey-900"
+                  href={""}
+                >
+                  Fashion{" "}
+                  <span>
+                    <svg
+                      className="rotate-[45deg]"
+                      width="14"
+                      height="6"
+                      viewBox="0 0 18 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 9L9 0.999999L0.999998 9"
+                        stroke="#2E3830"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm py-[8px] px-[8px] text-grey-700 hover:bg-grey-100 hover:text-grey-900 w-[200px] flex justify-between"
+                  href={""}
+                >
+                  Entertainment{" "}
+                  <span>
+                    <svg
+                      className="rotate-[45deg]"
+                      width="14"
+                      height="6"
+                      viewBox="0 0 18 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 9L9 0.999999L0.999998 9"
+                        stroke="#2E3830"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm py-[8px] px-[8px] text-grey-700 hover:bg-grey-100 hover:text-grey-900 flex justify-between"
+                  href={""}
+                >
+                  Agriculture{" "}
+                  <span>
+                    <svg
+                      className="rotate-[45deg]"
+                      width="14"
+                      height="6"
+                      viewBox="0 0 18 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 9L9 0.999999L0.999998 9"
+                        stroke="#2E3830"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm py-[8px] px-[8px] text-grey-700 hover:bg-grey-100 hover:text-grey-900 flex justify-between"
+                  href={""}
+                >
+                  Publishing{" "}
+                  <span>
+                    <svg
+                      className="rotate-[45deg]"
+                      width="14"
+                      height="6"
+                      viewBox="0 0 18 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 9L9 0.999999L0.999998 9"
+                        stroke="#2E3830"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className="pr-[24px] text-md text-grey-800">
+            <Link href={"/index"}>Foundation</Link>
+          </li>
+          <li className="">
+            <Link
+              className="py-[12px] px-[32px] text-base  text-grey-50 bg-grey-900"
+              href={"/"}
+            >
+              Contact-Us
+            </Link>
+          </li>
+        </ul>
+
+        {/* mobile vggie burger*/}
+        <div className="group/zena sm:hidden">
+          <button onClick={() => openCloseSideBarBtn(true)}>
+            <svg
+              width="24"
+              height="18"
+              viewBox="0 0 26 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1H25M1 19H25"
+                stroke="#2E3830"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

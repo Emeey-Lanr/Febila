@@ -2,17 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    padding: 0;
-    margin: 0;
- 
+
+@font-face {
+    /* helvetica */
+    font-family: helNormal;
+    src: url(../public/fonts/Helvetica.ttf);
 }
-body{
-    background: linear-gradient(to left, #f7f6f6, #f3f1f3, #f0f0f1);
+@font-face {
   
+      /* gilsans */
+    font-family: gilNormal;
+
+    src: url(../public/fonts/Gill\ Sans.otf);
 }
-.modal_background {
-background: #0000009f;
+
+
+
+.gilFnt{
+   font-family:gilNormal;
 }
+.helFnt{
+    font-family: helNormal;
+}
+.background{
+ background-color:hsla(0, 0%, 100%, 0.33);
+}
+
+.foundationbg_img{
+    background-image: url(../public/images/children.jpg);
+}
+
+
+
 
 

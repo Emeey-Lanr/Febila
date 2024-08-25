@@ -1,15 +1,24 @@
 'use client'
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { appContextSchema } from "./context.schema";
 import { useDispatch } from "react-redux";
-import { exitOpenModal } from "@/Redux/constituents/errorSuccessModal";
+
 export const AppContextAPI = createContext(appContextSchema)
-export const AppProvider = ({children}:{children:React.ReactNode}) => {
-   const dispatch = useDispatch();
+export const AppProvider = ({ children }: { children: React.ReactNode }) => {
+  const [sideBarState, setSideBarState] = useState<boolean>(false)
+  const dispatch = useDispatch();
+  
+  // Remeber to delete it but watch it for how it's done
    const openModalExitModal = (modalState: boolean, message: string) => {
-     dispatch(exitOpenModal({ modalState, message }));
-   };
-    return ( <AppContextAPI.Provider value={{openModalExitModal}}>
+    //  dispatch(exitOpenModal({ modalState, message }));
+  };
+  
+  const openCloseSideBarBtn = (value: boolean) => {
+    console.log(value)
+    setSideBarState(value)
+
+  }
+    return ( <AppContextAPI.Provider value={{openModalExitModal, openCloseSideBarBtn, sideBarState}}>
      {children}
     </AppContextAPI.Provider>)
 }

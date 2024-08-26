@@ -1,8 +1,8 @@
 import React from 'react'
 
-const LearnMoreBtn = () => {
+const LearnMoreBtn = ({borderColor, color }:{borderColor:string, color:string}) => {
   return (
-      <button className='w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-grey-50 text-sm py-[8px] border border-transwhite-300'>
+      <button className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base ${color} text-sm py-[8px] border ${borderColor} `}>
         learn more     
      </button>
   )

@@ -3,8 +3,13 @@
 import IndicationBtn from "@/components/IndicationBtn"
 import LearnMoreBtn from "@/components/LearnMoreBtn"
 import Slide from "@/components/Slide"
-import realEstate from "@/public/images/real estate.jpg"
-import  Image from "next/image"
+import realEstate from "@/public/images/house 2.jpg"
+import Image from "next/image"
+import house1 from "@/public/images/house 1.jpg"
+import hosue2 from "@/public/images/house 2.jpg"
+import house3 from "@/public/images/house 3.jpg"
+import fashion from "@/public/images/fashion.jpg"
+import entertainment from "@/public/images/entertainment.jpg"
 const Index = () => {
   return (
     <div className="">
@@ -28,7 +33,7 @@ const Index = () => {
       >
         <ellipse cx="16" cy="74" rx="60" ry="74" fill="#BFFA18" />
       </svg>
-      <div className="relative px-[32px] py-[16px]">
+      <div className="relative px-[32px] py-[32px]">
         {/* text sec */}
         <div className="py-[16px] px-[16px]  border border-b-0 border-grey-200 lg:flex lg:items-end md:py-[48px] md:justify-between">
           <h1 className="gilFnt text-[32px] text-grey-800 font-semibold pb-[6px] md:leading-[5rem] md:text-6xl">
@@ -63,7 +68,10 @@ const Index = () => {
                   <IndicationBtn describtionName="Febila" />
                 </div>
 
-                <LearnMoreBtn />
+                <LearnMoreBtn
+                  borderColor="border-transwhite-300"
+                  color="text-grey-50"
+                />
               </div>
               <div className="w-[32px] flex justify-center items-center text-grey-50 h-[32px]  border border-transwhite-300 lg:h-[42px] lg:w-[42px]">
                 1
@@ -87,14 +95,18 @@ const Index = () => {
               <p className="helFnt pt[12px] pb-[12px] text-sm text-grey-50 leading-[1.7rem] lg:w-[40%] lg:text-base">
                 We’ve initiated a lot project tailed towards providing health
                 care services, free water, free eductaion and free food for
-                people in need of those needs, you can make an impact by donating
+                people in need of those needs, you can make an impact by
+                donating
               </p>
               <div className="flex">
                 <button className=" text-grey-50 bg-green-500 flex justify-center items-center py-[8px] w-[98px] lg:w-[200px] lg:py-[16px]">
                   Donate
                 </button>
                 <div className="px-[8px]" />
-                <LearnMoreBtn />
+                <LearnMoreBtn
+                  borderColor="border-transwhite-300"
+                  color="text-grey-50"
+                />
               </div>
             </div>
           </div>
@@ -102,8 +114,178 @@ const Index = () => {
       </div>
 
       {/* Real Estate */}
+      <div className="gilFnt py-[32px] text-2xl px-[32px]">
+        <div className="py-[16px] px-[16px] border border-grey-200  border-b-0 lg:w-full lg:flex lg:items-start lg:justify-between lg:py-[48px]">
+          <h1 className="text-grey-800 text-2xl font-semibold lg:text-5xl lg:w-[30%]">
+            Let Us Find A Home For You
+          </h1>
+          <div className="lg:w-[40%]">
+            <p className="helFnt text-grey-700 text-sm py-[12px] lg:text-base ">
+              Looking to become a home owner or start from the humble beginning
+              of rent owne, we get you covered
+            </p>
+            <LearnMoreBtn borderColor="border-grey-300" color="text-grey-900" />
+          </div>
+        </div>
+        <div className="border border-t-0 border-grey-300 py-[16px] px-[8px] lg:border-0 lg:py-0 lg:px-0  lg:grid lg:grid-cols-3 lg:gap-x-6 ">
+          <div className="h-[240px] lg:h-[464px] relative overflow-hidden">
+            <Image
+              className="h-[240px] object-cover absolute md:h-[464px]"
+              alt=""
+              src={hosue2}
+            />
+            <div className="flex justify-between items-end px-[8px] py-[8px] w-[90%] bg-transwhite-700 absolute top-[10px] left-[5%] right-[5%] lg:top-[72%] lg:h-[92px]">
+              <div>
+                <h6 className="text-lg pb-[4px] helFnt text-grey-900 lg:text-2xl">
+                  Febila Home
+                </h6>
+                <p className=" text-xs pt-[4px] text-grey-700 lg:text-base">
+                  <span className="text-sm text-grey-900 lg:text-lg">23</span>{" "}
+                  units left
+                </p>
+              </div>
+              <div>
+                <button className="py-[8px] px-[8px] bg-green-500 rounded-lg">
+                  <svg
+                    className="w-[16px] h-[16px]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 9H17M17 9L9 1M17 9L9 17"
+                      stroke="white"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-[240px] mt-[16px] mb-[16px] relative overflow-hidden lg:m-0 lg:h-[464px]">
+            <Image
+              className="h-[240px] object-cover  absolute md:h-[464px]"
+              alt=""
+              src={house1}
+            />
+            <div className="flex justify-between items-end px-[8px] py-[8px] w-[90%] bg-transwhite-700 absolute top-[10px] left-[5%] right-[5%] lg:top-[72%] lg:h-[92px]">
+              <div>
+                <h6 className="text-lg pb-[4px] helFnt text-grey-900 lg:text-2xl">
+                  Jarus Home
+                </h6>
+                <p className=" text-xs pt-[4px] text-grey-700 lg:text-base">
+                  <span className="text-sm text-grey-900 lg:text-lg">23</span>{" "}
+                  units left
+                </p>
+              </div>
+              <div>
+                <button className="py-[8px] px-[8px] bg-green-500  rounded-full">
+                  <svg
+                    className="w-[16px] h-[16px]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 9H17M17 9L9 1M17 9L9 17"
+                      stroke="white"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-[240px] relative overflow-hidden lg:h-[464px]">
+            <Image
+              className="h-[240px] object-cover absolute md:h-[464px]"
+              alt=""
+              src={house3}
+            />
+            <div className="flex justify-between items-end px-[8px] py-[8px] w-[90%] bg-transwhite-700 absolute  top-[10px] left-[5%] right-[5%] lg:top-[72%] lg:h-[92px]">
+              <div>
+                <h6 className="text-lg pb-[4px] helFnt text-grey-900 lg:text-2xl">
+                  Jarus Home
+                </h6>
+                <p className=" text-xs pt-[4px] text-grey-700 lg:text-base">
+                  <span className="text-sm text-grey-900 lg:text-lg">23</span>{" "}
+                  units left
+                </p>
+              </div>
+              <div>
+                <button className="py-[8px] px-[8px] bg-green-500 rounded-lg">
+                  <svg
+                    className="w-[16px] h-[16px]"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 9H17M17 9L9 1M17 9L9 17"
+                      stroke="white"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Fashion */}
+      <div className="py-[32px] ">
+        <div style={{background:`url(${fashion})`}} className="bg-fixed bg-no-repeat bg-cover h-[100vh] w-full">
+          <div className="bg-transblack-500  w-full h-[100vh] flex justify-center lg:justify-start items-center">
+            <div className="px-[32px] py-[32px]">
+              <h1 className="gilFnt pb-[12px] text-2xl text-grey-50 lg:text-5xl font-semibold lg:w-[45%]">
+                Nothing Makes U Stylish More Than Some Febs On
+              </h1>
+              <p className="helFnt pt[12px] pb-[12px] text-sm text-grey-50 leading-[1.7rem] lg:w-[40%] lg:text-base">
+                We’ve initiated a lot project tailed towards providing health
+                care services, free water, free eductaion and free food for
+                people in need of those needs, you can make an impact by
+                donating
+              </p>
+              <div className="flex">
+                <IndicationBtn describtionName="Fashion" />
+                <div className="px-[8px]" />
+                <LearnMoreBtn
+                  borderColor="border-transwhite-300"
+                  color="text-grey-50"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div style={{backgroundImage:`url(${entertainment})`}} className="bg-fixed bg-no-repeat bg-cover h-[100vh] w-full">
+          <div className="bg-transblack-500  w-full h-[100vh] flex justify-center lg:justify-start items-center">
+            <div className="px-[32px] py-[32px]">
+              <h1 className="gilFnt pb-[12px] text-2xl text-grey-50 lg:text-5xl font-semibold lg:w-[45%]">
+                We Have The Needed Started For Your Events
+              </h1>
+              <p className="helFnt pt[12px] pb-[12px] text-sm text-grey-50 leading-[1.7rem] lg:w-[40%] lg:text-base">
+                We’ve initiated a lot project tailed towards providing health
+                care services, free water, free eductaion and free food for
+                people in need of those needs, you can make an impact by
+                donating
+              </p>
+              <div className="flex">
+               <IndicationBtn describtionName="Entertainment" />
+                <div className="px-[8px]" />
+                <LearnMoreBtn
+                  borderColor="border-transwhite-300"
+                  color="text-grey-50"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Entertainment */}
       {/* Publishing */}
       {/* Agriculture */}

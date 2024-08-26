@@ -37,6 +37,7 @@ const config: Config = {
     colors: {
       transwhite: {
         300: "hsla(0, 0%, 100%, 0.50)",
+        700: "hsla(0, 0%, 100%, 0.70)",
       },
       transblack: {
         500: "#00000088",

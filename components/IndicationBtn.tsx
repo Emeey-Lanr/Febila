@@ -1,7 +1,7 @@
 
-const IndicationBtn = ({describtionName}:{describtionName:string}) => {
+const IndicationBtn = ({describtionName, width}:{width:string, describtionName:string}) => {
   return (
-      <div className="bg-green-500 flex justify-center items-center py-[8px] w-[98px] lg:w-[200px] lg:py-[16px]">
+      <div className={`bg-green-500 flex justify-center items-center py-[8px]  ${width} lg:w-[200px] lg:py-[16px]`}>
           <span className="pr-[4px]">
               
                     <svg className="h-[12px] w-[12px] lg:h-[16px] lg:w-[16px]"

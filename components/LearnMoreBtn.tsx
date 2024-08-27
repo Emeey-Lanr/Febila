@@ -2,7 +2,7 @@ import React from 'react'
 
 const LearnMoreBtn = ({borderColor, color }:{borderColor:string, color:string}) => {
   return (
-      <button className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base ${color} text-sm py-[8px] border ${borderColor} `}>
+      <button className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border ${borderColor} ${color} `}>
         learn more     
      </button>
   )

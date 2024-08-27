@@ -8,13 +8,13 @@ import Image from "next/image"
 import house1 from "@/public/images/house 1.jpg"
 import hosue2 from "@/public/images/house 2.jpg"
 import house3 from "@/public/images/house 3.jpg"
-import fashion from "@/public/images/fashion.jpg"
-import entertainment from "@/public/images/entertainment.jpg"
+import storyImg from "@/public/images/story.jpg"
+import agri from "@/public/images/farm.jpg"
 const Index = () => {
   return (
     <div className="">
       <svg
-        className="lg:hidden absolute left-0 top-[40px]"
+        className="lg:hidden absolute left-0 top-[100px]"
         width="60"
         height="148"
         viewBox="0 0 60 148"
@@ -24,7 +24,7 @@ const Index = () => {
         <ellipse cy="74" rx="60" ry="74" fill="#D1FE51" />
       </svg>
       <svg
-        className="lg:hidden absolute  left-0 top-[120px]"
+        className="lg:hidden absolute  left-0 top-[200px]"
         width="76"
         height="148"
         viewBox="0 0 76 148"
@@ -65,7 +65,7 @@ const Index = () => {
             <div className="w-full absolute bottom-[10px] flex items-end justify-between px-[16px]">
               <div>
                 <div className="py-[12px]">
-                  <IndicationBtn describtionName="Febila" />
+                  <IndicationBtn width="w-[98px]" describtionName="Febila" />
                 </div>
 
                 <LearnMoreBtn
@@ -237,20 +237,19 @@ const Index = () => {
 
       {/* Fashion */}
       <div className="py-[32px] ">
-        <div style={{background:`url(${fashion})`}} className="bg-fixed bg-no-repeat bg-cover h-[100vh] w-full">
+        <div className="fashionbg bg-fixed bg-no-repeat bg-cover h-[100vh] w-full md:bg-contain md:bg-repeat">
           <div className="bg-transblack-500  w-full h-[100vh] flex justify-center lg:justify-start items-center">
             <div className="px-[32px] py-[32px]">
               <h1 className="gilFnt pb-[12px] text-2xl text-grey-50 lg:text-5xl font-semibold lg:w-[45%]">
                 Nothing Makes U Stylish More Than Some Febs On
               </h1>
               <p className="helFnt pt[12px] pb-[12px] text-sm text-grey-50 leading-[1.7rem] lg:w-[40%] lg:text-base">
-                We’ve initiated a lot project tailed towards providing health
-                care services, free water, free eductaion and free food for
-                people in need of those needs, you can make an impact by
-                donating
+                Our fashion collection creates a top notch identity for you,
+                which makes you distinct from your peers, an embodiment of
+                elegance which radiants your beauty when put on.
               </p>
               <div className="flex">
-                <IndicationBtn describtionName="Fashion" />
+                <IndicationBtn width="w-[98px]" describtionName="Fashion" />
                 <div className="px-[8px]" />
                 <LearnMoreBtn
                   borderColor="border-transwhite-300"
@@ -261,20 +260,22 @@ const Index = () => {
           </div>
         </div>
 
-         <div style={{backgroundImage:`url(${entertainment})`}} className="bg-fixed bg-no-repeat bg-cover h-[100vh] w-full">
+        <div className="entertainmentbg bg-fixed bg-no-repeat bg-cover h-[100vh] w-full">
           <div className="bg-transblack-500  w-full h-[100vh] flex justify-center lg:justify-start items-center">
             <div className="px-[32px] py-[32px]">
               <h1 className="gilFnt pb-[12px] text-2xl text-grey-50 lg:text-5xl font-semibold lg:w-[45%]">
-                We Have The Needed Started For Your Events
+                We Have The Needed Starter For Your Events
               </h1>
               <p className="helFnt pt[12px] pb-[12px] text-sm text-grey-50 leading-[1.7rem] lg:w-[40%] lg:text-base">
-                We’ve initiated a lot project tailed towards providing health
-                care services, free water, free eductaion and free food for
-                people in need of those needs, you can make an impact by
-                donating
+                Looking to start an event ? Our ticket event platform offers you
+                a space not just to sell your tickets but also to sell
+                assesories associated with the event
               </p>
               <div className="flex">
-               <IndicationBtn describtionName="Entertainment" />
+                <IndicationBtn
+                  width="w-[120px]"
+                  describtionName="Entertainment"
+                />
                 <div className="px-[8px]" />
                 <LearnMoreBtn
                   borderColor="border-transwhite-300"
@@ -286,9 +287,54 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Entertainment */}
       {/* Publishing */}
+      <div className="py-[32px] text-2xl px-[32px]">
+        <div className="py-[16px] px-[16px] border border-grey-200  border-b-0 lg:w-full lg:flex lg:items-start lg:justify-between lg:py-[48px]">
+          <h1 className="gilFnt text-grey-800 text-2xl font-semibold lg:text-5xl lg:w-[30%]">
+            Let Us Publish Your Story
+          </h1>
+          <div className="lg:w-[40%]">
+            <p className="helFnt text-grey-700 text-sm py-[12px] lg:text-base ">
+              Looking forward to have the best selling book ? You can never go
+              wrong with Febila Publishing. We publish all types of books, bring
+              ou that dream out of your shelves let us publish
+            </p>
+            <LearnMoreBtn borderColor="border-grey-300" color="text-grey-900" />
+          </div>
+        </div>
+
+        <div className="px-[8px] py-[12px] border border-grey-200 border-t-0 lg:m-0  lg:border-0 lg:py-0 lg:px-0">
+          <Image
+            className="h-[240px] object-cover   md:h-[464px]"
+            alt=""
+            src={storyImg}
+          />
+        </div>
+      </div>
+
       {/* Agriculture */}
+      <div className="py-[32px] text-2xl px-[32px] lg:pb-[64px]">
+        <div className="py-[16px] px-[16px] border border-grey-200  border-b-0 lg:w-full lg:flex lg:items-start lg:justify-between lg:py-[48px]">
+          <h1 className="gilFnt text-grey-800 text-2xl font-semibold lg:text-5xl lg:w-[30%]">
+            Embark On The Best Agriculture Investment With Us
+          </h1>
+          <div className="lg:w-[40%]">
+            <p className="helFnt text-grey-700 text-sm py-[12px] lg:text-base ">
+              We have the best agricultural investment scheme to boast your
+              income in term of raw materials, food and financial gain
+            </p>
+            <LearnMoreBtn borderColor="border-grey-300" color="text-grey-900" />
+          </div>
+        </div>
+
+        <div className="px-[8px] py-[12px] border border-grey-200 border-t-0 lg:m-0  lg:border-0 lg:px-0 lg:py-0">
+          <Image
+            className="h-[240px] object-cover   md:h-[464px]"
+            alt=""
+            src={agri}
+          />
+        </div>
+      </div>
     </div>
   );
 }

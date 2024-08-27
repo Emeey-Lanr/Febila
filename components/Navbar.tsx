@@ -27,7 +27,7 @@ const Navbar = () => {
 
       {/* navigation */}
       <div>
-        <ul className="hidden lg:flex sm:block">
+        <ul className="hidden lg:flex">
           <li className="px-[24px] text-grey-800">
             <Link
               href={"/index"}
@@ -196,7 +196,7 @@ const Navbar = () => {
         </ul>
 
         {/* mobile vggie burger*/}
-        <div className="group/zena sm:hidden">
+        <div className="group/zena md:hidden">
           <button onClick={() => openCloseSideBarBtn(true)}>
             <svg
               width="24"

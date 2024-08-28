@@ -5,8 +5,9 @@ import { ReduxProvider } from "@/Redux/Provider";
 import { AppProvider } from "@/context api/context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SideBar from "@/components/SideBar";
+import Sidebar from "@/components/Sidebar";
 import DonationNtAvailModal from "@/components/DonationNtAvailModal";
+
 
 export const metadata: Metadata = {
   title: "Febila",
@@ -27,7 +28,7 @@ export default function RootLayout({
               <Navbar/>
               {children}
               <Footer />
-              <SideBar />
+            <Sidebar/>
               <DonationNtAvailModal/>
             </body>
           </AppProvider>

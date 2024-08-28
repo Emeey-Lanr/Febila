@@ -1,7 +1,7 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
 import { AppContextAPI } from "@/context api/context";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const { openCloseSideBarBtn, sideBarState } = useContext(AppContextAPI);

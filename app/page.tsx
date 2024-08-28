@@ -10,10 +10,12 @@ import hosue2 from "@/public/images/house 2.jpg"
 import house3 from "@/public/images/house 3.jpg"
 import storyImg from "@/public/images/story.jpg"
 import agri from "@/public/images/farm.jpg"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { AppContextAPI } from "@/context api/context"
 
 
 const Index = () => {
+  const {openCloseSideBarBtn} = useContext(AppContextAPI)
   const [before, setBefore] = useState(-1)
   const [after, setAfter] = useState(-1)
   const [styles, setStyles] = useState<string[]>(['hidden', 'hidden', 'hidden', 'hidden', 'hidden'])
@@ -56,12 +58,7 @@ const Index = () => {
 //     // setTimeout(funcDo, 4000)
     
 // }
-//   useEffect(() => {
-//     setTimeout(() => {
-//       funcDo()
-//     },3000)
  
-// },[before])
   return (
     <div className="">
       <svg

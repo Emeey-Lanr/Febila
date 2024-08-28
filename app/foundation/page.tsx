@@ -1,8 +1,15 @@
+'use client'
 import Image from "next/image";
 import LearnMoreBtn from "@/components/LearnMoreBtn";
 import IndicationBtn from "@/components/IndicationBtn";
 import foundationhero from "@/public/images/donation.jpg"
+import impact from "@/public/images/impact.jpg"
+import water from "@/public/images/water.jpg"
+import { useContext, useEffect } from "react";
+import { AppContextAPI } from "@/context api/context";
 const page = () => {
+  const {openCloseSideBarBtn, openCloseDonationNotAvailableBtn } = useContext(AppContextAPI)
+
   return (
     <div>
       <svg
@@ -78,7 +85,7 @@ const page = () => {
 
       {/*What we do  */}
       <div>
-        {" "}
+        {/* This page incase you want to add a ballon */}{" "}
         <div className="py-[32px] px-[32px]">
           <h1 className="gilFnt font-semibold text-2xl text-grey-800 lg:text-5xl lg:text-center pb-[12px] lg:pb-[16px]">
             What We Do
@@ -138,10 +145,10 @@ const page = () => {
               <div className="pt-[16px] ">
                 <p className="text-sm text-grey-700 lg:text-base leading-[32px] lg:leading-[36px]">
                   {" "}
-                  One of the pillars of Febila Foundation, holding and
-                  properling our vision is good health and well being. She
-                  provides health services for rural areas and pay bill of those
-                  in need of urgent medical attention
+                  The fight against is one of the tenets of Febila. Febila aims
+                  to combat the wild spread of poverty in a certain demographic
+                  and beyond by providing food by empowering the inviduals with
+                  the neccessary skills and equipment{" "}
                 </p>
               </div>
             </div>
@@ -186,7 +193,7 @@ const page = () => {
               </div>
               {/*text  */}
               <div className="pt-[16px] ">
-                <p className="text-sm text-grey-700 lg:text-base leading-[32px] lg:leading-[36px]">
+                <p className="text-sm text-grey-700 lg:text-base leading-[32px] lg:leading-[36px] ">
                   {" "}
                   One of the pillars of Febila Foundation, holding and
                   properling our vision is good health and well being. She
@@ -238,10 +245,10 @@ const page = () => {
               <div className="pt-[16px] ">
                 <p className="text-sm text-grey-700 lg:text-base leading-[32px] lg:leading-[36px]">
                   {" "}
-                  One of the pillars of Febila Foundation, holding and
-                  properling our vision is good health and well being. She
-                  provides health services for rural areas and pay bill of those
-                  in need of urgent medical attention
+                  Provision of clean and free water is another mission Febila is
+                  raving on. She seeks to provide by digging wells for certain
+                  demographic that nature has benefitted of such or are in
+                  danger of dirty or no water at all.
                 </p>
               </div>
             </div>
@@ -294,12 +301,169 @@ const page = () => {
               <div className="pt-[16px] ">
                 <p className="text-sm text-grey-700 lg:text-base leading-[32px] lg:leading-[36px]">
                   {" "}
-                  One of the pillars of Febila Foundation, holding and
-                  properling our vision is good health and well being. She
-                  provides health services for rural areas and pay bill of those
-                  in need of urgent medical attention
+                  Equipping people with Knowlede is pivotal to Febila most
+                  especially to those whose environment cannot cater for the
+                  expenses of acquiring one. She also seeks to reward those who
+                  have made a landmark strides in the studies
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="py-[32px] px-[32px]">
+          <div>
+            <h1 className="gilFnt pb-[16px] font-semibold text-2xl text-grey-900 lg:text-5xl lg:pb-[24px]">
+              Our Project
+            </h1>
+          </div>
+
+          <div className="py-[16px] px-[16px] border border-grey-200 lg:grid grid-cols-2 gap-12 ">
+            <div>
+              <div>
+                <div>
+                  {/* <div className="w-[24px] h-[24px] border  border-grey-300 flex justify-center items-center">
+                    <p className="text-grey-900 text-lg">1</p>
+                  </div> */}
+                  <h1 className="gilFnt text-2xl font-semibold text-grey-800 py-[12px] lg:text-4xl lg:w-[70%]">
+                    Feed The Poor OutReach Programme{" "}
+                    <span className="text-xs text-grey-700 lg:text-sm">
+                      1.0
+                    </span>
+                  </h1>
+                </div>
+                <p className="helFnt text-sm text-grey-700 leading-[24px] lg:text-base lg:leading-[32px] lg:w-[70%]">
+                  Febila during her "Feed the Poor Outreach" did a street walk
+                  to provide food and clothes for beggerrs on the street. It was
+                  a 3 days outreach programme to provide for those in need
+                  starting from the street
+                </p>
+                <div className="flex items-center py-[12px] lg:py-[24px]">
+                  <span className="w-[12px] h-[12px] bg-green-500 flex justify-center items-center lg:w-[14px] lg:h-[14px]">
+                    <span className="block rounded-full w-[6px] h-[6px] bg-grey-50"></span>{" "}
+                  </span>{" "}
+                  <span className="helFnt text-xs text-grey-600 pl-[8px] lg:text-sm">
+                    You can still donate to the continuation of this program
+                  </span>
+                </div>
+                <div>
+                  <button  onClick={()=>openCloseDonationNotAvailableBtn(true)}
+                    className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border bg-green-500 text-grey-50 `}
+                  >
+                    Donate Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={"py-[16px]"}>
+              <Image
+                alt=""
+                src={impact}
+                className="h-[240px] object-cover lg:h-[480px]"
+              />
+            </div>
+          </div>
+
+          <div className="mt-[16px] py-[16px] px-[16px] border border-grey-200 lg:mt-[48px] lg:grid grid-cols-2 gap-12 ">
+            <div className={"py-[16px] hidden lg:block"}>
+              <Image
+                alt=""
+                src={water}
+                className="h-[240px] object-cover lg:h-[480px]"
+              />
+            </div>
+
+            <div>
+              <div>
+                <div>
+                  {/* <div className="w-[24px] h-[24px] border  border-grey-300 flex justify-center items-center">
+                    <p className="text-grey-900 text-lg">1</p>
+                  </div> */}
+                  <h1 className="gilFnt text-2xl font-semibold text-grey-800 py-[12px] lg:text-4xl lg:w-[70%]">
+                    Clean Water Free Water OutReach{" "}
+                    <span className="text-xs text-grey-700 lg:text-sm">
+                      1.0
+                    </span>
+                  </h1>
+                </div>
+                <p className="helFnt text-sm text-grey-700 leading-[24px] lg:text-base lg:leading-[32px] lg:w-[70%]">
+                  Febila penetrated into the unexpored areas who have to walk up
+                  to a mile to have access to dirty water in Nigeria. During
+                  this outreach Febila scanned the areas and where water can be
+                  found within the their reach and aims to to dig wells for them
+                </p>
+                <div className="flex items-center py-[12px] lg:py-[24px]">
+                  <span className="w-[12px] h-[12px] bg-green-500 flex justify-center items-center lg:w-[14px] lg:h-[14px]">
+                    <span className="block rounded-full w-[6px] h-[6px] bg-grey-50"></span>{" "}
+                  </span>{" "}
+                  <span className="helFnt text-xs text-grey-600 pl-[8px] lg:text-sm">
+                    You can still donate to the continuation of this program
+                  </span>
+                </div>
+                <div>
+                  <button onClick={()=>openCloseDonationNotAvailableBtn(true)}
+                    className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border bg-green-500 text-grey-50 `}
+                  >
+                    Donate Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className={"py-[16px] block lg:hidden"}>
+              <Image
+                alt=""
+                src={water}
+                className="h-[240px] object-cover lg:h-[480px]"
+              />
+            </div>
+          </div>
+
+          <div className="mt-[16px] py-[16px] px-[16px] border border-grey-200 lg:mt-[48px] lg:grid grid-cols-2 gap-12 ">
+            <div>
+              <div>
+                <div>
+                  {/* <div className="w-[24px] h-[24px] border  border-grey-300 flex justify-center items-center">
+                    <p className="text-grey-900 text-lg">1</p>
+                  </div> */}
+                  <h1 className="gilFnt text-2xl font-semibold text-grey-800 py-[12px] lg:text-4xl lg:w-[70%]">
+                     Free Pad Intiative 
+                    <span className="text-xs text-grey-700 lg:text-sm">
+                      1.0
+                    </span>
+                  </h1>
+                </div>
+                <p className="helFnt text-sm text-grey-700 leading-[24px] lg:text-base lg:leading-[32px] lg:w-[70%]">
+                  Febila during her "Feed the Poor Outreach" did a street walk
+                  to provide food and clothes for beggerrs on the street. It was
+                  a 3 days outreach programme to provide for those in need
+                  starting from the street
+                </p>
+                <div className="flex items-center py-[12px] lg:py-[24px]">
+                  <span className="w-[12px] h-[12px] bg-green-500 flex justify-center items-center lg:w-[14px] lg:h-[14px]">
+                    <span className="block rounded-full w-[6px] h-[6px] bg-grey-50"></span>{" "}
+                  </span>{" "}
+                  <span className="helFnt text-xs text-grey-600 pl-[8px] lg:text-sm">
+                    You can still donate to the continuation of this program
+                  </span>
+                </div>
+                <div>
+                  <button onClick={()=>openCloseDonationNotAvailableBtn(true)}
+                    className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border bg-green-500 text-grey-50 `}
+                  >
+                    Donate Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={"py-[16px]"}>
+              <Image
+                alt=""
+                src={impact}
+                className="h-[240px] object-cover lg:h-[480px]"
+              />
             </div>
           </div>
         </div>

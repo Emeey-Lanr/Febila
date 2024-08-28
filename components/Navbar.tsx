@@ -30,7 +30,7 @@ const Navbar = () => {
         <ul className="hidden md:flex">
           <li className="px-[24px] text-grey-800">
             <Link
-              href={"/index"}
+              href={"/"}
               className={`text-base ${pathname === "/" && "font-bold"}`}
             >
               Home
@@ -183,7 +183,7 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="pr-[24px] text-md text-grey-800">
-            <Link href={"/index"}>Foundation</Link>
+            <Link href={"/foundation"} className={`text-base ${pathname === "/foundation" && "font-bold"}`}>Foundation</Link>
           </li>
           <li className="">
             <Link

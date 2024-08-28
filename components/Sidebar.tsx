@@ -1,19 +1,25 @@
 'use client'
 import { useContext, useEffect, useState } from "react"
 import { AppContextAPI } from "@/context api/context"
-
+import { useRouter } from "next/router"
 import {usePathname} from "next/navigation"
 const Sidebar = () => {
     const {openCloseSideBarBtn, sideBarState} = useContext(AppContextAPI)
-   const pathname = usePathname() 
-   const [serviceState, setServiceState] = useState<boolean> (false)
+  const pathname = usePathname() 
+  const router = useRouter()
+  const [serviceState, setServiceState] = useState<boolean>(false)
+  
+  const routeToNextPage = (pageUrl: string) => {
+    openCloseSideBarBtn(false)
+    router.push(`/${pageUrl}`)
+  }
     return (
       <div
-        className={`sm:hidden ${
+        className={`md:hidden ${
           sideBarState
-            ? "opacity-[1] visible translate-x-0"
-            : "translate-x-[-1rem] opacity-0 invisible   sm:hidden"
-        } transition-all ease-out  w-full h-full fixed  top-0 bg-grey-50 overflow-x-hidden`}
+            ? "opacity-[1] visible translate-x-0 block"
+            : "translate-x-[-1rem] opacity-0 invisible hidden"
+        } transition-all ease-out  w-full h-full fixed  top-0 bg-grey-50 overflow-y-hidden`}
       >
         <svg
           className="absolute left-0 top-[40px]"
@@ -62,7 +68,7 @@ const Sidebar = () => {
           <div className=" font-hel relative">
             <ul>
               <li className="py-[32px]">
-                <button
+                <button onClick={()=>routeToNextPage('')}
                   className={`${
                     pathname == "/" ? "font-bold" : "font-normal"
                   }  text-base text-grey-800 `}
@@ -71,7 +77,7 @@ const Sidebar = () => {
                 </button>
               </li>
               <li className="pb-[32px]">
-                <button
+                <button onClick={()=>routeToNextPage('foundation')} 
                   className={`${
                     pathname == "/foundation" ? "font-bold" : "font-normal"
                   }  text-base text-grey-800 `}

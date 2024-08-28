@@ -10,7 +10,58 @@ import hosue2 from "@/public/images/house 2.jpg"
 import house3 from "@/public/images/house 3.jpg"
 import storyImg from "@/public/images/story.jpg"
 import agri from "@/public/images/farm.jpg"
+import { useEffect, useState } from "react"
+
+
 const Index = () => {
+  const [before, setBefore] = useState(-1)
+  const [after, setAfter] = useState(-1)
+  const [styles, setStyles] = useState<string[]>(['hidden', 'hidden', 'hidden', 'hidden', 'hidden'])
+
+//   const funcDo = () => {
+  
+//     if (before > after ) {
+//     let notStyle = styles
+//       setAfter(after + 1)
+//       notStyle[after] = 'hidden'
+//    setStyles(notStyle);
+        
+        
+//     } else if (before < after) {
+//      let notStyle = styles
+//       setAfter(0)
+//       notStyle[after] = "hidden";
+//     setStyles(notStyle);
+       
+//     }
+   
+    
+//     if (before === styles.length - 1) {
+//        let notStyle = styles;
+//        setBefore(0)
+//       notStyle[before] = "block";
+//        setStyles(notStyle);
+
+//     } else {
+//      let notStyle = styles;
+//       setBefore(before + 1)
+//       notStyle[before] = "block";
+//        setStyles(notStyle);
+//     }
+   
+  
+  
+//     console.log( styles)
+ 
+//     // setTimeout(funcDo, 4000)
+    
+// }
+//   useEffect(() => {
+//     setTimeout(() => {
+//       funcDo()
+//     },3000)
+ 
+// },[before])
   return (
     <div className="">
       <svg
@@ -71,11 +122,15 @@ const Index = () => {
                 <LearnMoreBtn
                   borderColor="border-transwhite-300"
                   color="text-grey-50"
+                  url="real-estate"
                 />
               </div>
-              <div className="w-[32px] flex justify-center items-center text-grey-50 h-[32px]  border border-transwhite-300 lg:h-[42px] lg:w-[42px]">
-                1
+              <div
+                className={` border  w-[32px] flex justify-center items-center text-grey-50 h-[32px]   lg:h-[42px] lg:w-[42px]`}
+              >
+                {before > -1 && before + 1}
               </div>
+         
             </div>
           </div>
         </div>
@@ -106,6 +161,7 @@ const Index = () => {
                 <LearnMoreBtn
                   borderColor="border-transwhite-300"
                   color="text-grey-50"
+                  url="foundation"
                 />
               </div>
             </div>
@@ -124,7 +180,11 @@ const Index = () => {
               Looking to become a home owner or start from the humble beginning
               of rent owne, we get you covered
             </p>
-            <LearnMoreBtn borderColor="border-grey-300" color="text-grey-900" />
+            <LearnMoreBtn
+              borderColor="border-grey-300"
+              color="text-grey-900"
+              url="real-estate"
+            />
           </div>
         </div>
         <div className="border border-t-0 border-grey-300 py-[16px] px-[8px] lg:border-0 lg:py-0 lg:px-0  lg:grid lg:grid-cols-3 lg:gap-x-6 ">
@@ -254,6 +314,7 @@ const Index = () => {
                 <LearnMoreBtn
                   borderColor="border-transwhite-300"
                   color="text-grey-50"
+                  url="http://vercel.febfas.com"
                 />
               </div>
             </div>
@@ -278,6 +339,7 @@ const Index = () => {
                 />
                 <div className="px-[8px]" />
                 <LearnMoreBtn
+                  url=""
                   borderColor="border-transwhite-300"
                   color="text-grey-50"
                 />
@@ -299,7 +361,11 @@ const Index = () => {
               wrong with Febila Publishing. We publish all types of books, bring
               ou that dream out of your shelves let us publish
             </p>
-            <LearnMoreBtn borderColor="border-grey-300" color="text-grey-900" />
+            <LearnMoreBtn
+              url="/publishing"
+              borderColor="border-grey-300"
+              color="text-grey-900"
+            />
           </div>
         </div>
 
@@ -323,7 +389,11 @@ const Index = () => {
               We have the best agricultural investment scheme to boast your
               income in term of raw materials, food and financial gain
             </p>
-            <LearnMoreBtn borderColor="border-grey-300" color="text-grey-900" />
+            <LearnMoreBtn
+              url="/agriculture"
+              borderColor="border-grey-300"
+              color="text-grey-900"
+            />
           </div>
         </div>
 

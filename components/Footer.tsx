@@ -25,8 +25,8 @@ const Footer = () => {
         <ellipse cx="16" cy="74" rx="60" ry="74" fill="#BFFA18" />
       </svg>
 
-      <div className="py-[32px] px-[32px] relative  items-start lg:flex lg:justify-between lg:py-[48px]">
-        <div className="py-[16px] lg:w-[30%]">
+      <div className="py-[32px] px-[32px] relative  items-start lg:flex lg:justify-between lg:py-[48px] md:grid md:grid-cols-3">
+        <div className="py-[16px] lg:w-[30%] md:col-span-4">
           <h2 className="gilFnttext-grey-800 text-xl font-semibold lg:text-2xl">
             News Letter
           </h2>
@@ -73,7 +73,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="py-[16px] lg:pt-0 lg:w-[20%]">
+        <div className="py-[16px] lg:pt-0 lg:w-[20%] ">
           <p className="gilFnt text-base text-grey-800 font-semibold lg:text-lg">
             Contact
           </p>
@@ -106,7 +106,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className='lg:w-[20%]'>
+        <div className='lg:w-[20%] '>
           <div className="flex items-center">
             <svg className="w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]"
              

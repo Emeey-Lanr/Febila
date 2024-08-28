@@ -27,7 +27,7 @@ const Navbar = () => {
 
       {/* navigation */}
       <div>
-        <ul className="hidden lg:flex">
+        <ul className="hidden md:flex">
           <li className="px-[24px] text-grey-800">
             <Link
               href={"/index"}

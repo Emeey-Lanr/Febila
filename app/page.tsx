@@ -81,7 +81,7 @@ const Index = () => {
       >
         <ellipse cx="16" cy="74" rx="60" ry="74" fill="#BFFA18" />
       </svg>
-      <div className="relative px-[32px] py-[32px]">
+      <div className="relative py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
         {/* text sec */}
         <div className="py-[16px] px-[16px]  border border-b-0 border-grey-200 lg:flex lg:items-end md:py-[48px] md:justify-between">
           <h1 className="gilFnt text-[32px] text-grey-800 font-semibold pb-[6px] md:leading-[5rem] md:text-6xl">

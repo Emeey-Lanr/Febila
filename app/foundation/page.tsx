@@ -5,8 +5,10 @@ import IndicationBtn from "@/components/IndicationBtn";
 import foundationhero from "@/public/images/donation.jpg"
 import impact from "@/public/images/impact.jpg"
 import water from "@/public/images/water.jpg"
+import moth from "@/public/images/month.jpg"
 import { useContext, useEffect } from "react";
 import { AppContextAPI } from "@/context api/context";
+
 const page = () => {
   const {openCloseSideBarBtn, openCloseDonationNotAvailableBtn } = useContext(AppContextAPI)
 
@@ -34,17 +36,15 @@ const page = () => {
       </svg>
       <div className="relative px-[32px] py-[32px]">
         {/* text sec */}
-        <div className="py-[16px] px-[16px]  border border-b-0 border-grey-200 lg:flex lg:items-end md:py-[48px] md:justify-between">
+        <div className="py-[16px] px-[16px]  border border-b-0 border-grey-200 ">
           <h1 className="gilFnt text-[32px] text-grey-800 font-semibold pb-[6px] md:leading-[5rem] md:text-6xl">
-            FREE WATER FOR ALL CLEAN WATER FOR ALL
+            WELCOME TO FEBILA FOUNDATION
           </h1>
           <p className="helFnt text-sm text-grey-700 leading-[1.7em] pt-[6px] md:text-lg lg:w-[50%]">
             <span className="text-lg text-green-500  italic font-semibold">
               Febila
             </span>{" "}
-            has provided and still aims to provide clean and free water for
-            certain demographic of people who don't have access to clean and
-            free water
+            foundation is a home for all and it is also an hope for all
           </p>
         </div>
 

@@ -205,6 +205,9 @@ const Sidebar = () => {
                 </li>
               </ul>
             </li>
+            <li className="pb-[32px]">
+              <button className="text-grey-800">About us</button>
+            </li>
             <li className="">
               <button className="text-grey-800">Contact us</button>
             </li>

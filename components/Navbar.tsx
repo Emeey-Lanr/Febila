@@ -183,7 +183,22 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="pr-[24px] text-md text-grey-800">
-            <Link href={"/foundation"} className={`text-base ${pathname === "/foundation" && "font-bold"}`}>Foundation</Link>
+            <Link
+              href={"/foundation"}
+              className={`text-base ${
+                pathname === "/foundation" && "font-bold"
+              }`}
+            >
+              Foundation
+            </Link>
+          </li>
+          <li className="px-[24px] text-grey-800">
+            <Link
+              href={"/"}
+              className={`text-base ${pathname === "/about-us" && "font-bold"}`}
+            >
+              About Us
+            </Link>
           </li>
           <li className="">
             <Link

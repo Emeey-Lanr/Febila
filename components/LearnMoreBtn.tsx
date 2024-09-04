@@ -5,7 +5,7 @@ const LearnMoreBtn = ({borderColor, color, url }:{borderColor:string, color:stri
 
   return (
       <button  className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border ${borderColor} ${color} `}>
-      <Link href={url}> 
+      <Link href={`/${url}`}> 
             learn more 
       </Link>
         

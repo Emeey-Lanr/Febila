@@ -120,7 +120,10 @@ const Sidebar = () => {
                 }  transition-all ease-out   py-[16px] pl-[16px] text-grey-700`}
               >
                 <li className="pb-[16px] text-sm">
-                  <button className="flex w-full items-center justify-between">
+                  <button
+                    onClick={() => routeToNextPage("real-estate")}
+                    className="flex w-full items-center justify-between"
+                  >
                     <span>Real-estate</span>
                     <span>
                       <svg
@@ -183,7 +186,10 @@ const Sidebar = () => {
                   </button>
                 </li>
                 <li className="text-sm">
-                  <button className="flex w-full items-center justify-between">
+                  <button
+                    onClick={() => routeToNextPage("publishing")}
+                    className="flex w-full items-center justify-between"
+                  >
                     <span>Publishing</span>
                     <span>
                       <svg
@@ -206,10 +212,20 @@ const Sidebar = () => {
               </ul>
             </li>
             <li className="pb-[32px]">
-              <button className="text-grey-800">About us</button>
+              <button
+                onClick={() => routeToNextPage("about-us")}
+                className="text-grey-800"
+              >
+                About us
+              </button>
             </li>
             <li className="">
-              <button className="text-grey-800">Contact us</button>
+              <button
+                onClick={() => routeToNextPage("contact-us")}
+                className="text-grey-800"
+              >
+                Contact us
+              </button>
             </li>
           </ul>
         </div>
@@ -218,16 +234,15 @@ const Sidebar = () => {
         <div className="flex items-center">
           <span>
             <svg
-              width="26"
-              height="26"
-              viewBox="0 0 26 26"
+              className="w-[24px] h-[24px]"
+              viewBox="0 0 28 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M1 25V1H25V25H1Z" fill="#1CE34A" />
               <path
-                d="M2.5 8.5V2.5H23.5V16M2.5 8.5H13V10H2.5M2.5 8.5V10M2.5 10V23.5H23.5V17.5M23.5 17.5H13V16H23.5M23.5 17.5V16M1 1V25H25V1H1Z"
-                stroke="white"
+                d="M2 22L6 14M26 22L17.5777 5.15542C16.1036 2.20722 11.8964 2.20722 10.4223 5.15542L6 14M6 14H14"
+                stroke="#1CE34A"
+                stroke-width="4"
                 stroke-linecap="round"
               />
             </svg>

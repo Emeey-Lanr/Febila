@@ -2,63 +2,22 @@
 
 import IndicationBtn from "@/components/IndicationBtn"
 import LearnMoreBtn from "@/components/LearnMoreBtn"
-import Slide from "@/components/Slide"
-import realEstate from "@/public/images/house 2.jpg"
+import fashion from "@/public/images/fashion.jpg"
 import Image from "next/image"
 import house1 from "@/public/images/house 1.jpg"
 import hosue2 from "@/public/images/house 2.jpg"
 import house3 from "@/public/images/house 3.jpg"
 import storyImg from "@/public/images/story.jpg"
 import agri from "@/public/images/farm.jpg"
+import children from "@/public/images/children.jpg"
 import { useEffect, useState, useContext } from "react"
 import { AppContextAPI } from "@/context api/context"
 
 
 const Index = () => {
-  const {openCloseSideBarBtn} = useContext(AppContextAPI)
+  const {openCloseSideBarBtn, openCloseDonationNotAvailableBtn} = useContext(AppContextAPI)
   const [before, setBefore] = useState(-1)
-  const [after, setAfter] = useState(-1)
-  const [styles, setStyles] = useState<string[]>(['hidden', 'hidden', 'hidden', 'hidden', 'hidden'])
 
-//   const funcDo = () => {
-  
-//     if (before > after ) {
-//     let notStyle = styles
-//       setAfter(after + 1)
-//       notStyle[after] = 'hidden'
-//    setStyles(notStyle);
-        
-        
-//     } else if (before < after) {
-//      let notStyle = styles
-//       setAfter(0)
-//       notStyle[after] = "hidden";
-//     setStyles(notStyle);
-       
-//     }
-   
-    
-//     if (before === styles.length - 1) {
-//        let notStyle = styles;
-//        setBefore(0)
-//       notStyle[before] = "block";
-//        setStyles(notStyle);
-
-//     } else {
-//      let notStyle = styles;
-//       setBefore(before + 1)
-//       notStyle[before] = "block";
-//        setStyles(notStyle);
-//     }
-   
-  
-  
-//     console.log( styles)
- 
-//     // setTimeout(funcDo, 4000)
-    
-// }
- 
   return (
     <div className="">
       <svg
@@ -100,11 +59,31 @@ const Index = () => {
         {/* Carousel */}
         <div className="relative h-[210px] md:h-[510px]">
           {/* image */}
-          <div className="absolute h-[210px] md:h-[510px] z-0">
+          <div className="absolute h-[210px] md:h-[510px] grid grid-cols-5 z-0">
             <Image
               alt=""
               className="h-[210px] md:h-[510px] object-cover"
-              src={realEstate}
+              src={children}
+            />
+            <Image
+              alt=""
+              className="h-[210px] md:h-[510px] object-cover"
+              src={house1}
+            />
+            <Image
+              alt=""
+              className="h-[210px] md:h-[510px] object-cover"
+              src={fashion}
+            />
+            <Image
+              alt=""
+              className="h-[210px] md:h-[510px] object-cover"
+              src={storyImg}
+            />
+            <Image
+              alt=""
+              className="h-[210px] md:h-[510px] object-cover"
+              src={agri}
             />
           </div>
           {/* cover */}
@@ -119,15 +98,9 @@ const Index = () => {
                 <LearnMoreBtn
                   borderColor="border-transwhite-300"
                   color="text-grey-50"
-                  url="real-estate"
+                  url="about-us `"
                 />
               </div>
-              <div
-                className={` border  w-[32px] flex justify-center items-center text-grey-50 h-[32px]   lg:h-[42px] lg:w-[42px]`}
-              >
-                {before > -1 && before + 1}
-              </div>
-         
             </div>
           </div>
         </div>
@@ -137,7 +110,7 @@ const Index = () => {
       <div></div>
 
       {/* Foundation */}
-      <div className="py-[32px] ">
+      <div className="py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
         <div className="foundationbg_img   bg-fixed bg-no-repeat bg-cover h-[100vh] w-full">
           <div className="bg-transblack-500  w-full h-[100vh] flex justify-center lg:justify-start items-center">
             <div className="px-[32px] py-[32px]">
@@ -151,7 +124,7 @@ const Index = () => {
                 donating
               </p>
               <div className="flex">
-                <button className=" text-grey-50 bg-green-500 flex justify-center items-center py-[8px] w-[98px] lg:w-[200px] lg:py-[16px]">
+                <button onClick={()=>openCloseDonationNotAvailableBtn(true)} className=" text-grey-50 bg-green-500 flex justify-center items-center py-[8px] w-[98px] lg:w-[200px] lg:py-[16px]">
                   Donate
                 </button>
                 <div className="px-[8px]" />
@@ -167,7 +140,7 @@ const Index = () => {
       </div>
 
       {/* Real Estate */}
-      <div className="gilFnt py-[32px] text-2xl px-[32px]">
+      <div className="gilFnt text-2xl  py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
         <div className="py-[16px] px-[16px] border border-grey-200  border-b-0 lg:w-full lg:flex lg:items-start lg:justify-between lg:py-[48px]">
           <h1 className="text-grey-800 text-2xl font-semibold lg:text-5xl lg:w-[30%]">
             Let Us Find A Home For You
@@ -293,7 +266,7 @@ const Index = () => {
       </div>
 
       {/* Fashion */}
-      <div className="py-[32px] ">
+      <div className="py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
         <div className="fashionbg bg-fixed bg-no-repeat bg-cover h-[100vh] w-full md:bg-contain md:bg-repeat">
           <div className="bg-transblack-500  w-full h-[100vh] flex justify-center lg:justify-start items-center">
             <div className="px-[32px] py-[32px]">
@@ -347,7 +320,7 @@ const Index = () => {
       </div>
 
       {/* Publishing */}
-      <div className="py-[32px] text-2xl px-[32px]">
+      <div className="text-2xl py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
         <div className="py-[16px] px-[16px] border border-grey-200  border-b-0 lg:w-full lg:flex lg:items-start lg:justify-between lg:py-[48px]">
           <h1 className="gilFnt text-grey-800 text-2xl font-semibold lg:text-5xl lg:w-[30%]">
             Let Us Publish Your Story
@@ -359,7 +332,7 @@ const Index = () => {
               ou that dream out of your shelves let us publish
             </p>
             <LearnMoreBtn
-              url="/publishing"
+              url="publishing"
               borderColor="border-grey-300"
               color="text-grey-900"
             />
@@ -376,7 +349,7 @@ const Index = () => {
       </div>
 
       {/* Agriculture */}
-      <div className="py-[32px] text-2xl px-[32px] lg:pb-[64px]">
+      <div className=" text-2xl  py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px] lg:pb-[64px]">
         <div className="py-[16px] px-[16px] border border-grey-200  border-b-0 lg:w-full lg:flex lg:items-start lg:justify-between lg:py-[48px]">
           <h1 className="gilFnt text-grey-800 text-2xl font-semibold lg:text-5xl lg:w-[30%]">
             Embark On The Best Agriculture Investment With Us
@@ -387,7 +360,7 @@ const Index = () => {
               income in term of raw materials, food and financial gain
             </p>
             <LearnMoreBtn
-              url="/agriculture"
+              url="agriculture"
               borderColor="border-grey-300"
               color="text-grey-900"
             />

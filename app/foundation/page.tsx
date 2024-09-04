@@ -5,7 +5,8 @@ import IndicationBtn from "@/components/IndicationBtn";
 import foundationhero from "@/public/images/donation.jpg"
 import impact from "@/public/images/impact.jpg"
 import water from "@/public/images/water.jpg"
-import moth from "@/public/images/month.jpg"
+import children from "@/public/images/children.jpg"
+import bookDonationPic from "@/public/images/textbook-donation.jpg"
 import { useContext, useEffect } from "react";
 import { AppContextAPI } from "@/context api/context";
 
@@ -34,13 +35,13 @@ const page = () => {
       >
         <ellipse cx="16" cy="74" rx="60" ry="74" fill="#BFFA18" />
       </svg>
-      <div className="relative px-[32px] py-[32px]">
+      <div className="relative py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
         {/* text sec */}
         <div className="py-[16px] px-[16px]  border border-b-0 border-grey-200 ">
-          <h1 className="gilFnt text-[32px] text-grey-800 font-semibold pb-[6px] md:leading-[5rem] md:text-6xl">
+          <h1 className="gilFnt text-[32px] text-center text-grey-800 font-semibold pb-[6px] md:leading-[5rem] md:text-6xl">
             WELCOME TO FEBILA FOUNDATION
           </h1>
-          <p className="helFnt text-sm text-grey-700 leading-[1.7em] pt-[6px] md:text-lg lg:w-[50%]">
+          <p className="helFnt text-sm text-grey-700 text-center leading-[1.7em] pt-[6px] md:text-lg ">
             <span className="text-lg text-green-500  italic font-semibold">
               Febila
             </span>{" "}
@@ -51,32 +52,17 @@ const page = () => {
         {/* Carousel */}
         <div className="relative h-[210px] md:h-[510px]">
           {/* image */}
-          <div className="absolute h-[210px] md:h-[510px] z-0">
+          <div className="absolute h-[210px] w-full md:h-[510px] z-0">
             <Image
               alt=""
-              className="h-[210px] md:h-[510px] object-cover"
-              src={foundationhero}
+              className="h-[210px] w-full  md:h-[510px] object-cover"
+              src={children}
             />
           </div>
           {/* cover */}
           {/* put the indicator inside */}
           <div className="bg-transblack-500  w-full absolute md:h-[510px]  h-[210px]">
-            <div className="w-full absolute bottom-[10px] flex items-end justify-between px-[16px]">
-              <div>
-                <div className="py-[12px]">
-                  <IndicationBtn width="w-[98px]" describtionName="Febila" />
-                </div>
-
-                <LearnMoreBtn
-                  borderColor="border-transwhite-300"
-                  color="text-grey-50"
-                  url="real-estate"
-                />
-              </div>
-              <div className="w-[32px] flex justify-center items-center text-grey-50 h-[32px]  border border-transwhite-300 lg:h-[42px] lg:w-[42px]">
-                1
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -86,7 +72,7 @@ const page = () => {
       {/*What we do  */}
       <div>
         {/* This page incase you want to add a ballon */}{" "}
-        <div className="py-[32px] px-[32px]">
+        <div className="py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
           <h1 className="gilFnt font-semibold text-2xl text-grey-800 lg:text-5xl lg:text-center pb-[12px] lg:pb-[16px]">
             What We Do
           </h1>
@@ -313,7 +299,7 @@ const page = () => {
       </div>
 
       <div>
-        <div className="py-[32px] px-[32px]">
+        <div className="py-[16px] px-[16px]  lg:px-[32px] lg:py-[32px]">
           <div>
             <h1 className="gilFnt pb-[16px] font-semibold text-2xl text-grey-900 lg:text-5xl lg:pb-[24px]">
               Our Project
@@ -349,7 +335,8 @@ const page = () => {
                   </span>
                 </div>
                 <div>
-                  <button  onClick={()=>openCloseDonationNotAvailableBtn(true)}
+                  <button
+                    onClick={() => openCloseDonationNotAvailableBtn(true)}
                     className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border bg-green-500 text-grey-50 `}
                   >
                     Donate Now
@@ -403,7 +390,8 @@ const page = () => {
                   </span>
                 </div>
                 <div>
-                  <button onClick={()=>openCloseDonationNotAvailableBtn(true)}
+                  <button
+                    onClick={() => openCloseDonationNotAvailableBtn(true)}
                     className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border bg-green-500 text-grey-50 `}
                   >
                     Donate Now
@@ -428,18 +416,19 @@ const page = () => {
                   {/* <div className="w-[24px] h-[24px] border  border-grey-300 flex justify-center items-center">
                     <p className="text-grey-900 text-lg">1</p>
                   </div> */}
-                  <h1 className="gilFnt text-2xl font-semibold text-grey-800 py-[12px] lg:text-4xl lg:w-[70%]">
-                     Free Pad Intiative 
+                  <h1 className="gilFnt text-2xl font-semibold text-grey-800 py-[12px] lg:text-4xl lg:w-[60%]">
+                    Free Educational Material
                     <span className="text-xs text-grey-700 lg:text-sm">
                       1.0
                     </span>
                   </h1>
                 </div>
                 <p className="helFnt text-sm text-grey-700 leading-[24px] lg:text-base lg:leading-[32px] lg:w-[70%]">
-                  Febila during her "Feed the Poor Outreach" did a street walk
-                  to provide food and clothes for beggerrs on the street. It was
-                  a 3 days outreach programme to provide for those in need
-                  starting from the street
+                  Febila through her free educational material intiative was
+                  able to provide schools with educational materials like
+                  textbook, pencils and excellent student exceeling beyound
+                  their peers were appricaited with scholapship to help movitate
+                  them and serve as an inspirationf for others
                 </p>
                 <div className="flex items-center py-[12px] lg:py-[24px]">
                   <span className="w-[12px] h-[12px] bg-green-500 flex justify-center items-center lg:w-[14px] lg:h-[14px]">
@@ -450,7 +439,8 @@ const page = () => {
                   </span>
                 </div>
                 <div>
-                  <button onClick={()=>openCloseDonationNotAvailableBtn(true)}
+                  <button
+                    onClick={() => openCloseDonationNotAvailableBtn(true)}
                     className={`w-[98px] lg:w-[200px] lg:py-[16px] lg:text-base text-sm py-[8px] border bg-green-500 text-grey-50 `}
                   >
                     Donate Now
@@ -461,7 +451,7 @@ const page = () => {
             <div className={"py-[16px]"}>
               <Image
                 alt=""
-                src={impact}
+                src={bookDonationPic}
                 className="h-[240px] object-cover lg:h-[480px]"
               />
             </div>

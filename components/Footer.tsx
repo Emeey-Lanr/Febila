@@ -52,12 +52,18 @@ const Footer = () => {
           </p>
           <ul className="helFnt">
             <li className="py-[8px]">
-              <Link href="" className="text-sm text-grey-700 lg:text-base">
+              <Link
+                href="/real-estate"
+                className="text-sm text-grey-700 lg:text-base"
+              >
                 Real Estate
               </Link>
             </li>
             <li className="py-[8px]">
-              <Link href="" className="text-sm text-grey-700 lg:text-base">
+              <Link
+                href="/agriculture"
+                className="text-sm text-grey-700 lg:text-base"
+              >
                 Agriculture
               </Link>
             </li>
@@ -67,7 +73,7 @@ const Footer = () => {
               </Link>
             </li>
             <li className="py-[8px]">
-              <Link href="" className="text-sm text-grey-700 lg:text-base">
+              <Link href="/" className="text-sm text-grey-700 lg:text-base">
                 Entertainment
               </Link>
             </li>
@@ -98,35 +104,52 @@ const Footer = () => {
                 Gmail
               </Link>
             </li>
-            <li className="py-[8px]">
-              <Link href="" className="text-sm text-grey-700">
-                Whatsppp
-              </Link>
-            </li>
           </ul>
         </div>
 
-        <div className='lg:w-[20%] '>
+        <div className="lg:w-[20%] ">
           <div className="flex items-center">
-            <svg className="w-[24px] h-[24px] lg:w-[30px] lg:h-[30px]"
-             
-              viewBox="0 0 26 26"
+            <svg
+              className='w-[24px] h-[24px]'
+              viewBox="0 0 28 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M1 25V1H25V25H1Z" fill="#1CE34A" />
               <path
-                d="M2.5 8.5V2.5H23.5V16M2.5 8.5H13V10H2.5M2.5 8.5V10M2.5 10V23.5H23.5V17.5M23.5 17.5H13V16H23.5M23.5 17.5V16M1 1V25H25V1H1Z"
-                stroke="white"
+                d="M2 22L6 14M26 22L17.5777 5.15542C16.1036 2.20722 11.8964 2.20722 10.4223 5.15542L6 14M6 14H14"
+                stroke="#1CE34A"
+                stroke-width="4"
                 stroke-linecap="round"
               />
             </svg>
+
             <h1 className="gilFnt text-2xl font-semibold text-grey-800 px-[8px] lg:text-3xl">
               Febila
             </h1>
           </div>
+
           <div className="py-[8px]">
-            <p className="helFnt text-xs text-grey-700 lg:text-base">Lagos Nigeria</p>
+            <p className="flex items-center text-xs text-grey-700 font-helvetica">
+              copyright{" "}
+              <span className="px-[4px]">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="6" cy="6" r="5.5" stroke="#2E3830" />
+                  <path
+                    d="M7.5 3.40135C7.05874 3.14609 6.54643 3 6 3C4.34315 3 3 4.34315 3 6C3 7.65685 4.34315 9 6 9C6.54643 9 7.05874 8.85391 7.5 8.59865"
+                    stroke="#2E3830"
+                    stroke-width="0.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              2024. Febila.
+            </p>
           </div>
         </div>
       </div>

@@ -26,6 +26,7 @@
 }
 .background{
  background-color:hsla(0, 0%, 100%, 0.33);
+
 }
 
 .foundationbg_img{
@@ -40,6 +41,13 @@
  background-image: url(../public/images/entertainment.jpg);
 }
 
+.mission {
+    background-image: url(../public/images/mission.jpg) ;
+}
+
+.vision{
+    background-image: url(../public/images/vision.jpg);
+}
 
 
 

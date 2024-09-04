@@ -7,19 +7,34 @@ const Navbar = () => {
   const pathname = usePathname()
     const {openCloseSideBarBtn} = useContext(AppContextAPI);
   return (
-    <div className="helFnt px-[32px] py-[24px] md:py-[32px] mx-auto flex justify-between items-center">
+    <div className="helFnt px-[16px] lg:px-[32px]  py-[24px] md:py-[32px] mx-auto flex justify-between items-center">
       {/* Logo */}
       <div>
         <svg
-          className="w-[24px] h-[24px] lg:w-[42px] lg:h-[42px]"
-          viewBox="0 0 26 26"
+          className="hidden lg:block w-[48px] h-[48px]"
+          viewBox="0 0 56 47"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M1 25V1H25V25H1Z" fill="#1CE34A" />
           <path
-            d="M2.5 8.5V2.5H23.5V16M2.5 8.5H13V10H2.5M2.5 8.5V10M2.5 10V23.5H23.5V17.5M23.5 17.5H13V16H23.5M23.5 17.5V16M1 1V25H25V1H1Z"
-            stroke="white"
+            d="M4 43L12 27M52 43L35.1554 9.31084C32.2072 3.41445 23.7928 3.41444 20.8446 9.31083L12 27M12 27H28"
+            stroke="#1CE34A"
+            stroke-width="8"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <svg className="lg:hidden w-[24px] h-[24px]"
+          width="28"
+          height="24"
+          viewBox="0 0 28 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 22L6 14M26 22L17.5777 5.15542C16.1036 2.20722 11.8964 2.20722 10.4223 5.15542L6 14M6 14H14"
+            stroke="#1CE34A"
+            stroke-width="4"
             stroke-linecap="round"
           />
         </svg>
@@ -37,7 +52,14 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="group/services  flex justify-start items-center relative px-[24px] text-grey-800">
-            <span className="text-base flex items-center">
+            <span
+              className={`text-base flex items-center ${
+                (pathname === "/publishing" ||
+                  pathname === "/agriculture" ||
+                  pathname === "/real-estate") &&
+                "font-bold"
+              }`}
+            >
               Services{" "}
               <span className="px-[8px]">
                 <svg
@@ -63,7 +85,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="text-sm py-[8px] px-[8px] text-grey-700 rounded-sm flex justify-between hover:bg-grey-100 hover:text-grey-900"
-                  href={""}
+                  href={"/real-estate"}
                 >
                   Real Estate{" "}
                   <span>
@@ -87,7 +109,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="text-sm py-[8px] px-[8px] text-grey-700 flex justify-between hover:bg-grey-100 hover:text-grey-900"
-                  href={""}
+                  href={"/"}
                 >
                   Fashion{" "}
                   <span>
@@ -111,7 +133,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="text-sm py-[8px] px-[8px] text-grey-700 hover:bg-grey-100 hover:text-grey-900 w-[200px] flex justify-between"
-                  href={""}
+                  href={"/"}
                 >
                   Entertainment{" "}
                   <span>
@@ -135,7 +157,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="text-sm py-[8px] px-[8px] text-grey-700 hover:bg-grey-100 hover:text-grey-900 flex justify-between"
-                  href={""}
+                  href={"/agriculture"}
                 >
                   Agriculture{" "}
                   <span>
@@ -159,7 +181,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="text-sm py-[8px] px-[8px] text-grey-700 hover:bg-grey-100 hover:text-grey-900 flex justify-between"
-                  href={""}
+                  href={"/publishing"}
                 >
                   Publishing{" "}
                   <span>
@@ -194,7 +216,7 @@ const Navbar = () => {
           </li>
           <li className="px-[24px] text-grey-800">
             <Link
-              href={"/"}
+              href={"/about-us"}
               className={`text-base ${pathname === "/about-us" && "font-bold"}`}
             >
               About Us

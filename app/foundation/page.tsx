@@ -1,8 +1,5 @@
 'use client'
 import Image from "next/image";
-import LearnMoreBtn from "@/components/LearnMoreBtn";
-import IndicationBtn from "@/components/IndicationBtn";
-import foundationhero from "@/public/images/donation.jpg"
 import impact from "@/public/images/impact.jpg"
 import water from "@/public/images/water.jpg"
 import children from "@/public/images/children.jpg"

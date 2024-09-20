@@ -15,9 +15,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
   
   const openCloseSideBarBtn = (value: boolean) => {
-
     setSideBarState(value)
-
   }
   const openCloseDonationNotAvailableBtn = (value:boolean) => {
     setNotAvailableModalState(value)

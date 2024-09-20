@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 import DonationNtAvailModal from "@/components/DonationNtAvailModal";
+import RealEstateModal from "@/components/RealEstateModal";
 
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
               <Footer />
             <Sidebar/>
               <DonationNtAvailModal/>
+              <RealEstateModal/>
             </body>
           </AppProvider>
         </ReduxProvider>

@@ -2,10 +2,12 @@ import { configureStore } from "@reduxjs/toolkit"
 
 
 import donate from "./constituents/donate"
+import modalStatus from "./constituents/modalStatus"
 export const store = configureStore({
     reducer: {
-   
-        donate
+
+        donate,
+        modalStatus
         
      
     }

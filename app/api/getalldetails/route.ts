@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
-export const GET = (req: NextRequest, res: NextResponse) => {
-  try {
-  } catch (error) {}
-};
+// import { NextRequest, NextResponse } from "next/server";
+// export const GET = (req: NextRequest, res: NextResponse) => {
+//   try {
+//   } catch (error) {}
+// };

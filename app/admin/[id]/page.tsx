@@ -4,15 +4,15 @@ import AddRealEstateBtn from "@/components/AddRealEstateBtn"
 
 const page = () => {
   return (
-    <>
+    <div className="py-[16px] px-[16px]">
       <div className="py-[12px] px-[12px] grid grid-cols-1 lg:grid-cols-4">
       <div className="py-[8px] px-[8px] border border-grey-200">
         <div className="relative">
           {/* button */}
-          <div className="absolute flex py-[12px] px-[12px] right-0">
+          {/* <div className="absolute flex py-[12px] px-[12px] right-0">
             <button style={{background:"white"}} className="py-[8px] px-[8px] rounded-full">E</button>
             <button style={{background:"white"}} className="py-[8px] px-[8px] rounded-full ">D</button>
-          </div>
+          </div> */}
           <Image className="h-[200px] object-cover" src={house1} alt=""/>
         </div>
         <div>
@@ -29,7 +29,7 @@ const page = () => {
 
     </div>
      <AddRealEstateBtn/>
-    </>
+    </div>
   
   )
 }

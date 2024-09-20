@@ -9,12 +9,13 @@ const page = () => {
   const loginF = async (e:React.FormEvent) => {
   
     try {
+      e.preventDefault()
       if (username !== "" && password !== "") {
         setErrorMessage('')
-        e.preventDefault()
+        
         setDisabled(true)
-        const login = await axios.post(`http://localhost:3000/api/signin`, { username, password })
-        console.log(login)
+        // const login = await axios.post(`http://localhost:3000/api/signin`, { username, password })
+        // console.log(login)
 
       } else {
         setErrorMessage('Fill in all details')
@@ -26,21 +27,31 @@ const page = () => {
   }
 
   return (
-    <div className="py-[60px]">
+    <div className="py-[94px] px-[12px]">
       <div
         style={{ background: "white" }}
-        className="lg:w-[400px] shadow-sm mx-auto py-[12px] px-[12px]"
+        className="lg:w-[400px] shadow-sm mx-auto py-[24px] px-[24px]"
       >
         <h1></h1>
-        <h2 className="text-2xl text-center text-grey-500 gilFnt font-semibold  lg:text-4xl">
+        <h2 className="text-2xl text-center text-grey-700 gilFnt font-semibold  lg:text-4xl">
           Login as admin
         </h2>
-        <p className="pt-[8px] text-grey-700 text-sm lg:text-base">
+        <p className="pt-[8px] helFnt   text-grey-600 text-center text-sm lg:text-base">
           Fill in details to access as an admin
         </p>
-        {errorMessage !== "" && <div style={{ background: "hsl(0, 50, 5)" }} className="py-[12px] px-[12px]">
-          <p style={{ color: "hsl(0, 50, 90)" }} className="text-sm">{errorMessage}</p>
-        </div>}
+        {errorMessage !== "" && (
+          <div
+            style={{ background: "hsl(0, 100%, 80%)" }}
+            className="py-[12px] px-[12px]"
+          >
+            <p
+              style={{ color: "hsl(0, 100%, 10%)" }}
+              className="text-sm font-bold helFnt text-center"
+            >
+              {errorMessage}
+            </p>
+          </div>
+        )}
         <form onSubmit={(e) => loginF(e)}>
           <div className="py-[16px]">
             <label className="helFnt text-sm text-grey-700 pb-[12px] lg:text-base">
@@ -70,11 +81,11 @@ const page = () => {
               {disbaled ? (
                 <div className="flex">
                   <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping"></span>
-                  <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping"></span>
+                  <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping mx-[12px]"></span>
                   <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping"></span>
                 </div>
               ) : (
-                <span> Access</span>
+                <span className="text-grey-50 font-semibold"> Access</span>
               )}
             </button>
           </div>

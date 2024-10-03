@@ -1,24 +1,39 @@
 'use client'
+import { changeStatusR } from "@/Redux/constituents/successErrorModal";
 import axios from "axios"
- import {useState} from "react"
+import { useState } from "react"
+ import { useDispatch} from "react-redux";
+import { useRouter } from "next/navigation";
 const page = () => {
+  const dispatch = useDispatch();
+  const router = useRouter()
   const [disbaled, setDisabled] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const loginF = async (e:React.FormEvent) => {
+  const [inputEmpty, setInputEmpty] = useState(false)
+
   
+  const loginF = async (e:React.FormEvent) => {
     try {
+
       e.preventDefault()
       if (username !== "" && password !== "") {
         setErrorMessage('')
         
         setDisabled(true)
-        // const login = await axios.post(`http://localhost:3000/api/signin`, { username, password })
-        // console.log(login)
-
+        const login = await axios.post(`http://localhost:3000/api/signin`, { username, password })
+         setDisabled(false)
+        if (login.data.error) {
+         dispatch(changeStatusR({color:'hsl(0, 100%, 100%)', message:`${login.data.message}`, type:`Error`, hidden:false}))
+      
+        } else {
+          localStorage.setItem("sessionToken", `${login.data.token}`);
+             router.push(`/admin/${login.data.username}`);
+       }
+    
       } else {
-        setErrorMessage('Fill in all details')
+        setInputEmpty(true)
       }
     } catch (error) {
       setErrorMessage('An error occured. Please, try again')
@@ -27,6 +42,7 @@ const page = () => {
   }
 
   return (
+    <>
     <div className="py-[94px] px-[12px]">
       <div
         style={{ background: "white" }}
@@ -62,7 +78,8 @@ const page = () => {
               onChange={(e) => setUsername(e.target.value)}
               type="text"
               className="helFnt w-full  px-[8px] border border-grey-200 py-[8px] lg:py-[12px]"
-            />
+              />
+              { (username == "" && inputEmpty) && <p style={{color:'hsl(0, 100%, 50%)'}} className="text-xs helFnt pt-[4px]">Fill In Inputs</p>}
           </div>
           <div className="pb-[16px]">
             <label className="helFnt text-sm text-grey-700 pb-[12px] lg:text-base">
@@ -73,7 +90,8 @@ const page = () => {
               onChange={(e) => setPassword(e.target.value)}
               type="text"
               className="helFnt w-full  px-[8px] border border-grey-200 py-[8px] lg:py-[12px]"
-            />
+              />
+              {(password == "" && inputEmpty) && <p style={{color:'hsl(0, 100%, 50%)'}} className="text-xs helFnt pt-[4px]">Fill In Inputs</p>}
           </div>
           <div>
             <button className=" w-full flex justify-center items-center bg-green-500 py-[8px] lg:py-[12px]">
@@ -92,6 +110,8 @@ const page = () => {
         </form>
       </div>
     </div>
+       
+    </>
   );
 }
 

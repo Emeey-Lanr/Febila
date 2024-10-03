@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 import DonationNtAvailModal from "@/components/DonationNtAvailModal";
 import RealEstateModal from "@/components/RealEstateModal";
+import SuccessErrorPage from "@/components/SuccessErrorPage";
 
 
 export const metadata: Metadata = {
@@ -31,7 +32,8 @@ export default function RootLayout({
               <Footer />
             <Sidebar/>
               <DonationNtAvailModal/>
-              <RealEstateModal/>
+              <RealEstateModal />
+              <SuccessErrorPage/>
             </body>
           </AppProvider>
         </ReduxProvider>

@@ -11,7 +11,7 @@ const RealEstateModal = () => {
     const  [unit, setUnit] = useState<number>(0)
     const [price, setPrice] = useState('')
   const [title, setTitle] = useState('')
-  const [caption, setCaption] = useState('')
+  const [location, setLocation] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   
 
@@ -31,8 +31,8 @@ const RealEstateModal = () => {
   const submitBtn = async (e: any) => {
     try {
       e.preventDefault()
-      if ((price !== '' && title !== '') && (imgUrl !== '' && caption !== '')) {
-        const register = await axios.post('/', {imgUrl, price, unit, title, caption})
+      if ((price !== '' && title !== '') && (imgUrl !== '' && location !== '')) {
+        const register = await axios.post('/', {imgUrl, price, unit, title, location})
     } else {
       setErrorMessage('fill in details')
       }
@@ -107,7 +107,7 @@ const RealEstateModal = () => {
                     />
                   </div>
                 </div>
-                <div className="flex justify-between items-center mb-[18px]">
+                {/* <div className="flex justify-between items-center mb-[18px]">
                   <p className="gilFnt text-sm font-semibold text-grey-700">
                     Units
                   </p>
@@ -128,18 +128,26 @@ const RealEstateModal = () => {
                       -
                     </button>
                   </div>
-                </div>
+                </div> */}
+                <input
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="helFnt text-sm mb-[24px] px-[8px] text-grey-700 py-[12px] block w-full border border-grey-200 bg-none fcus:border-grey-400"
+                  placeholder="type"
+                  type="text"
+                />
                 <input
                   onChange={(e) => setTitle(e.target.value)}
                   className="helFnt text-sm mb-[24px] px-[8px] text-grey-700 py-[12px] block w-full border border-grey-200 bg-none fcus:border-grey-400"
                   placeholder="Title"
                   type="text"
                 />
-                <textarea
-                  onChange={(e) => setCaption(e.target.value)}
-                  placeholder="Description"
-                  className="helFnt text-sm px-[8px] py-[8px] mb-[24px] block resize-none w-full h-[50px] border  border-grey-200 bg-none"
-                ></textarea>
+                <input
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="helFnt text-sm mb-[24px] px-[8px] text-grey-700 py-[12px] block w-full border border-grey-200 bg-none fcus:border-grey-400"
+                  placeholder="location"
+                  type="text"
+                />
+
                 <div>
                   <button className="helFnt py-[12px] w-full bg-green-500 text-grey-100">
                     Add

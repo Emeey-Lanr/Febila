@@ -26,10 +26,14 @@ const get = await axios.get(`/api/admin`, {
     Accept: `application/json`,
   },
 });
-console.log(get)
-       const data:realEstateData[] = get.data.realEstateData 
-       dispatch(onLoadDetailsR(data))
-       dispatch(getDataR(`${get.data.username}`))
+       console.log(get)
+       if (get.data.error) {
+         console.log("an error occured")
+       } else {
+         const data: realEstateData[] = get.data.realEstateData
+         dispatch(onLoadDetailsR(data))
+         dispatch(getDataR(`${get.data.username}`))
+       }
      }catch(error){
       //  router.push('/admin/signin')
      }

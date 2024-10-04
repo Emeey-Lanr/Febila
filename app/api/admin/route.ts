@@ -15,20 +15,21 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
     const getTokenDetails: any = jwt.verify(`${token?.split("-")[1]}`, `${process.env.NEXT_PUBLIC_SECRET}`);
  console.log(getTokenDetails.data)
 if(getTokenDetails.data !== token?.split("-")[0]){
-  return NextResponse.error()
+  return NextResponse.json({ message: "an error occured", error: true });
 }
 
 const adminVerification = await adminModel.findOne({username:`${token?.split("-")[0]}`})
     if (!adminVerification) {
-  return NextResponse.error()
+  return NextResponse.json({message:"an error occured", error:true })
     }
     console.log(adminVerification)
 
     const realEstateDataAdded = await realEstateModel.find({ username: adminVerification.username })
     console.log(realEstateDataAdded)
     
-    return NextResponse.json({message:"verification succesfull", username:adminVerification.username, realEstateData: realEstateDataAdded})
+    return NextResponse.json({message:"verification succesfull", username:adminVerification.username, realEstateData: realEstateDataAdded, error:false})
   } catch (error: any) {
+    console.log(error)
      return NextResponse.json({message:'an error occured'})
   }
 };

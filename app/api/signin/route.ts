@@ -18,8 +18,9 @@ export const POST = async (req:NextRequest, res:NextResponse) => {
             return NextResponse.json({message:"Invalid Login Attempt", error:true})
         }
          const comparePassword =  await bcrypt.compare(password, dataFromDB.password)
+         console.log(comparePassword)
         if (!comparePassword) {
-        return NextResponse.json({message:"Invalid Login Attempt", error:true})
+        return NextResponse.json({message:"Invalid Password", error:true})
         }
         const token = jwt.sign({data:username}, `${process.env.NEXT_PUBLIC_SECRET}`, {expiresIn:'7d'})
         

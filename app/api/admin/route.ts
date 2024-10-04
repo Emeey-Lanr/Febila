@@ -13,7 +13,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
     console.log(token, token?.split("-"), 100)
     // string at index 1 is jwt token why the one the at 0 is username
     const getTokenDetails: any = jwt.verify(`${token?.split("-")[1]}`, `${process.env.NEXT_PUBLIC_SECRET}`);
- console.log(getTokenDetails.data)
+
 if(getTokenDetails.data !== token?.split("-")[0]){
   return NextResponse.json({ message: "an error occured", error: true });
 }

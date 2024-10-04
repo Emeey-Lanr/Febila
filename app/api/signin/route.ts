@@ -16,12 +16,12 @@ export const POST = async (req:NextRequest, res:NextResponse) => {
         console.log(username, password)
         
         const dataFromDB = await adminModel.findOne({ username: username })
-        console.log(dataFromDB)
+   
         if (!dataFromDB) {
             return NextResponse.json({message:"Invalid Login Attempt", error:true})
         }
          const comparePassword =  await bcrypt.compare(password, dataFromDB.password)
-         console.log(comparePassword)
+        
         if (!comparePassword) {
         return NextResponse.json({message:"Invalid Password", error:true})
         }

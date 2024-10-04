@@ -19,8 +19,8 @@ export const POST = async (req:NextRequest, res:NextResponse) => {
       if (ifTitleExist) {
         return NextResponse.json({message:"Title already exist"})
       }
-      // const changeImgToUrl = await cloudinary.uploader.upload(data.img, { public_id: 'febila' })
-      // data.img = `${changeImgToUrl}`
+      const changeImgToUrl = await cloudinary.uploader.upload(data.img, { public_id: 'febila' })
+      data.img = `${changeImgToUrl}`
       const add = new realEstateModel(data)
       const save = await add.save()
     return NextResponse.json({ message: "added succesfully", realEstateData : save })

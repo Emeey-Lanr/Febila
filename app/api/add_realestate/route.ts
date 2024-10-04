@@ -13,16 +13,17 @@ export const POST = async (req:NextRequest, res:NextResponse) => {
   try {
       
     let data: realEstateData = await req.json()
+    console.log(data)
      const connect  = await connectToDb()
       const ifTitleExist = await realEstateModel.findOne({ title: data.title })
       if (ifTitleExist) {
         return NextResponse.json({message:"Title already exist"})
       }
-      const changeImgToUrl = await cloudinary.uploader.upload(data.img, { public_id: 'febila' })
-      data.img = `${changeImgToUrl}`
+      // const changeImgToUrl = await cloudinary.uploader.upload(data.img, { public_id: 'febila' })
+      // data.img = `${changeImgToUrl}`
       const add = new realEstateModel(data)
       const save = await add.save()
-    return NextResponse.json({ message: "added succesfully", data: save })
+    return NextResponse.json({ message: "added succesfully", realEstateData : save })
     
     } catch (error) {
         return NextResponse.json({message:"an error occured, try again"})

@@ -2,7 +2,7 @@ export type realEstateData = {
   username: string;
   img: string;
   price: string;
-  unit: string;
+  type: string;
   title: string;
-  description: string;
+  location: string;
 };

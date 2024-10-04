@@ -4,15 +4,20 @@ import { useDispatch, useSelector } from "react-redux"
 import { useReducer, useState } from "react"
 import { addEstateR } from "@/Redux/constituents/modalStatus"
 import { RootState } from "@/Redux/Store"
+import { addDetailsR } from "@/Redux/constituents/real_estate_data"
+import { realEstateData } from "@/types/realEstateData"
+
 const RealEstateModal = () => {
   const dispatch = useDispatch()
   const modalStatus = useSelector((state:RootState)=>state.modalStatus.value)
-  const [imgUrl, setImgUrl] = useState<any>('')
-    const  [unit, setUnit] = useState<number>(0)
+  const username = useSelector((state:RootState)=>state.admin.value)
+  const [img, setImg] = useState<any>('')
+    const  [type, setType] = useState('')
     const [price, setPrice] = useState('')
   const [title, setTitle] = useState('')
   const [location, setLocation] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [disabled, setDisabled] =useState(false)
   
 
     const uploadImg = (e:any) => {
@@ -20,20 +25,30 @@ const RealEstateModal = () => {
         imgUpload.readAsDataURL(e.target.files[0])
       imgUpload.onload = () => {
           console.log(imgUpload.result)
-            setImgUrl(`${imgUpload.result}`)
+            setImg(`${imgUpload.result}`)
         }
   }
-  const decreaseBtn = () => {
-    if (unit > 0) {
-      setUnit(unit- 1)
-    }
+  const emptyValues = () => {
+    dispatch(addEstateR(false));
+    setImg('')
+    setPrice('')
+    setType('')
+    setTitle('')
+    setLocation('')
+
   }
+  
   const submitBtn = async (e: any) => {
     try {
       e.preventDefault()
-      if ((price !== '' && title !== '') && (imgUrl !== '' && location !== '')) {
-        const register = await axios.post('/', {imgUrl, price, unit, title, location})
-    } else {
+      setDisabled(true)
+      if ((price !== '' && title !== '') && (img !== '' && location !== '')) {
+        const register = await axios.post('http://localhost:3000/api/add_realestate', {img, price, type, title, location, username})
+        setDisabled(false)
+        const data:realEstateData = register.data.realEstateData
+        dispatch(addDetailsR(data))
+        emptyValues()
+      } else {
       setErrorMessage('fill in details')
       }
     
@@ -76,9 +91,9 @@ const RealEstateModal = () => {
                   </div>
                 )}
                 <div className="h-[200px] px-[12px] py-[12px] border border-grey-200 my-[24px] flex justify-center items-center">
-                  {imgUrl !== "" ? (
+                  {img !== "" ? (
                     <img
-                      src={`${imgUrl}`}
+                      src={`${img}`}
                       className="w-full h-full object-cover"
                       width={100}
                       alt=""
@@ -130,7 +145,7 @@ const RealEstateModal = () => {
                   </div>
                 </div> */}
                 <input
-                  onChange={(e) => setTitle(e.target.value)}
+                  onChange={(e) => setType(e.target.value)}
                   className="helFnt text-sm mb-[24px] px-[8px] text-grey-700 py-[12px] block w-full border border-grey-200 bg-none fcus:border-grey-400"
                   placeholder="type"
                   type="text"
@@ -150,7 +165,15 @@ const RealEstateModal = () => {
 
                 <div>
                   <button className="helFnt py-[12px] w-full bg-green-500 text-grey-100">
-                    Add
+                    {disabled ? (
+                <div className="flex">
+                  <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping"></span>
+                  <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping mx-[12px]"></span>
+                  <span className="block w-[12px] h-[12px] bg-grey-50 animate-ping"></span>
+                </div>
+              ) : (
+                <span className="text-grey-50 font-semibold"> Access</span>
+              )}
                   </button>
                 </div>
               </form>

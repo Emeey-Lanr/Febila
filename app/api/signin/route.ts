@@ -14,6 +14,7 @@ export const POST = async (req:NextRequest, res:NextResponse) => {
         const { username, password }: reqData = await req.json()
         const connect = await connectToDb()
         const dataFromDB = await adminModel.findOne({ username: username })
+        console.log(dataFromDB)
         if (!dataFromDB) {
             return NextResponse.json({message:"Invalid Login Attempt", error:true})
         }

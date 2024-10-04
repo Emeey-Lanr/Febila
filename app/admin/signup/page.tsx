@@ -38,6 +38,7 @@ const page = () => {
           setInputEmpty(true)
       }
     } catch (error) {
+      console.log(error)
        dispatch(
          changeStatusR({
            color: `hsl(0, 100%, 50%)`,

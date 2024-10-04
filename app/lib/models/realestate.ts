@@ -9,4 +9,4 @@ const realEstateSchema = new mongoose.Schema({
     location:{type:String, required:true}
 })
 
-export  const realEstateModel = mongoose.models.real_estate || mongoose.model('real_estate', realEstateSchema)
+export  const realEstateModel = mongoose.models.real_estate || mongoose.model('real_estate', realEstateSchema, "real_estateCollection")

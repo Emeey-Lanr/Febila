@@ -16,7 +16,7 @@ const page = () => {
     try {
       e.preventDefault()
       if (name !== '' && email !== '' && message !== '') {
-        const add = await axios.post("http://localhost:3000/api/contact", {
+        const add = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}`, {
           name,
           email,
           message,

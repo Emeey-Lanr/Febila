@@ -7,6 +7,7 @@ export const AppContextAPI = createContext(appContextSchema)
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [sideBarState, setSideBarState] = useState<boolean>(false)
   const [notAvailableModalState, setNotAvailableModalState] = useState<boolean>(false)
+  const url = `https://febila.vercel.app/admin/signup`;
   const dispatch = useDispatch();
   
   // Remeber to delete it but watch it for how it's done

@@ -43,7 +43,7 @@ const RealEstateModal = () => {
       e.preventDefault()
       setDisabled(true)
       if ((price !== '' && title !== '') && (img !== '' && location !== '')) {
-        const register = await axios.post('http://localhost:3000/api/add_realestate', {img, price, type, title, location, username})
+        const register = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/add_realestate`, {img, price, type, title, location, username})
         setDisabled(false)
         const data:realEstateData = register.data.realEstateData
         dispatch(addDetailsR(data))

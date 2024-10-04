@@ -24,7 +24,7 @@ const page = () => {
         setErrorMessage("");
 
         setDisabled(true);
-        const register = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/signup`, { username, password, key })
+        const register = await axios.post(`/api/signup`, { username, password, key })
          console.log(register)
         if (register.data.error) {
           dispatch(changeStatusR({ color: `hsl(0, 100%, 50%)`, message: `${register.data.message}`, type: 'Error', hidden:false }))

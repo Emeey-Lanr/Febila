@@ -11,8 +11,10 @@ type reqData = {
 }
 export const POST = async (req:NextRequest, res:NextResponse) => {
     try {
+        const connect = await connectToDb();
         const { username, password }: reqData = await req.json()
-        const connect = await connectToDb()
+        console.log(username, password)
+        
         const dataFromDB = await adminModel.findOne({ username: username })
         console.log(dataFromDB)
         if (!dataFromDB) {

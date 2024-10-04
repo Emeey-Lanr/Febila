@@ -19,7 +19,7 @@ const page = () => {
 //  console.log(path.split)
   const confirmAndGetDetails = async (token:any) => {
      try{
-const get = await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/admin`, {
+const get = await axios.get(`/api/admin`, {
   headers: {
     Authorization: `bearer ${path.split("/")[2]}-${token}`,
     "Content-Type": "application/json",

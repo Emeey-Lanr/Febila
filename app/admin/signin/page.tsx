@@ -22,7 +22,7 @@ const page = () => {
         setErrorMessage('')
         
         setDisabled(true)
-        const login = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/signin`, { username, password })
+        const login = await axios.post(`/api/signin`, { username, password })
          setDisabled(false)
         if (login.data.error) {
          dispatch(changeStatusR({color:'hsl(0, 100%, 100%)', message:`${login.data.message}`, type:`Error`, hidden:false}))
